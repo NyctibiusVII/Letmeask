@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+Allow: /createRoom
+
+# Host
+Host: https://letmeask-nyctibiusvii.vercel.app
+
+# Sitemaps
+Sitemap: https://letmeask-nyctibiusvii.vercel.app/sitemap.xml

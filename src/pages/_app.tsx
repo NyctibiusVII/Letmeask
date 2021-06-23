@@ -3,7 +3,6 @@ import type { AppProps } from 'next/app'
 import { AuthContextProvider } from '../contexts/AuthContext'
 
 import Head from 'next/head'
-import '../services/firebase'
 import '../styles/global.scss'
 
 export default function MyApp({ Component, pageProps }: AppProps) {

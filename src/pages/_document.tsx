@@ -9,7 +9,7 @@ export default class MyDocument extends Document {
             link  = "https://letmeask-nyctibiusvii.vercel.app/",
             NyctibiusVII = "Matheus Vidigal - (NyctibiusVII)",
             NyctibiusVII_twitter = "@NyctibiusVII",
-            description = "Tire as dúvidas da sua audiência em tempo real",
+            description = "Projeto web construído durante o NLW#06(Together) com a Rocketseat/Diego Fernandes. LETMEASK: 'Tire as dúvidas da sua audiência em tempo real'. 🙋🏻‍♀️💬",
             keywords    = "nodejs, css, html, typescript, reactjs, nextjs, discovery, letmeask, projeto, contexts, rocketseat, vercel, nextlevelweek, diegofernandes, nlw6, together, trilha-react, perguntas, firebase"
 
         return (
