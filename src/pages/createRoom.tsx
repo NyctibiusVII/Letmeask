@@ -6,7 +6,7 @@ import { RoomButton }        from '../components/roomButton'
 import logo from '../../public/icons/logo.svg'
 
 import Head   from 'next/head'
-import Link   from 'next/Link'
+import Link   from 'next/link'
 import Image  from 'next/image'
 import styles from '../styles/pages/CreateRoom.module.scss'
 
