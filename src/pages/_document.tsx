@@ -9,7 +9,7 @@ export default class MyDocument extends Document {
             link  = "https://letmeask-nyctibiusvii.vercel.app/",
             NyctibiusVII = "Matheus Vidigal - (NyctibiusVII)",
             NyctibiusVII_twitter = "@NyctibiusVII",
-            description = "Me faça uma pergunta!",
+            description = "Tire as dúvidas da sua audiência em tempo real",
             keywords    = "nodejs, css, html, typescript, reactjs, nextjs, discovery, letmeask, projeto, contexts, rocketseat, vercel, nextlevelweek, diegofernandes, nlw6, together, trilha-react, perguntas, firebase"
 
         return (
@@ -21,7 +21,7 @@ export default class MyDocument extends Document {
                     <meta name="robots"       content="all" />
                     <meta name="rating"       content="general" />
                     <meta name="distribution" content="global" />
-                    <meta name="description"  content="Me faça uma pergunta!" />
+                    <meta name="description"  content="Tire as dúvidas da sua audiência em tempo real" />
 
                     <meta name="author"   content={ NyctibiusVII } />
                     <meta name="creator"  content={ NyctibiusVII } />
@@ -48,6 +48,10 @@ export default class MyDocument extends Document {
                     <meta name="twitter:card"        content="summary_large_image" />
 
                     <link rel="shortcut icon" href="/favicon.svg" type="image/svg" />
+
+                    <link rel="preconnect" href="https://fonts.googleapis.com" />
+                    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin='anonymous' />
+                    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&amp;family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet" />
                 </Head>
                 <body>
                     <Main />

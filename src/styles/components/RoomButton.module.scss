@@ -1,0 +1,30 @@
+.container {
+    height: 3rem;
+
+    background-color: var(--purple);
+    color: var(--white);
+    border: 0;
+    font-weight: 500;
+
+    padding: 0 2rem;
+
+    margin-top: 4rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* - Next/Image */
+    > div {
+        margin-right: 0.5rem !important;
+    }
+
+    &:not(:disabled):hover {
+        background-color: var(--purple-dark);
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed !important;
+    }
+}

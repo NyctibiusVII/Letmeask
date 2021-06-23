@@ -28,5 +28,7 @@ const firebaseConfig: FirebaseConfig = {
 
 !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app() // - If already initialized, use that one
 
-export const auth     = firebase.auth()
-export const database = firebase.database()
+const auth     = firebase.auth()
+const database = firebase.database()
+
+export { firebase, auth, database }

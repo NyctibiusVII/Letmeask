@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+ /**
+  * Aplicada a regra de harmonia de cores.
+  *
+  * O tema GREEN e PURPLE é apropriado
+  * para daltônicos (Deuteranopia, Protanopia e Tritanopia).
+  *
+  * - Adobe Color
+  */
+  --white: #fff;
+  --black: #000;
+
+  /* - THEME RED, GREEN, BLUE, PURPLE e PINK - */
+  --red-very-light  : #fff5f5;
+  --red-light       : #fa4362;
+  --red             : #e83f5b; /* e73f5d */
+  --red-dark        : #691c29; /* d73754 */
+  --red-google      : #ea4335;
+  --red-google-dark : #d33527;
+
+  --green-very-light : #77ff88;
+  --green-light      : #05eb6c;
+  --green            : #04d361; /* 500 */
+  --green-dark       : #04ba56;
+  --green-very-dark  : #039444;
+
+  --blue-very-light   : #6787ff;
+  --blue-light        : #526dff;
+  --blue              : #485bff;
+  --blue-dark         : #4051e6;
+
+  --purple-very-light : #bca7fd;
+  --purple-light      : #967cff;
+  --purple            : #835afd;
+  --purple-dark       : #6f4bd8;
+
+  --pink-very-light : #efb5fc;
+  --pink-light      : #d67ee2;
+  --pink            : #ff59f8;
+  --pink-dark       : #e559f9;
+
+  --purple-gradient: linear-gradient(139.44deg, var(--blue) 0%, var(--pink) 96.19%);
+  /*--------------------------------------------*/
+
+  --details    : #fefefe;
+  --background : #f8f8f8;
+  --gray-line  : #dcdde0;
+  --shadow     : #050206;
+
+  --light-gray  : #dbdcdd;
+  --medium-gray : #a8a8b3;
+  --dark-gray   : #737380;
+
+  --title : #2e384d;
+
+  --text-highlight : #b3b9ff;
+  --text           : #29292e;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+}
+
+body,
+button,
+input,
+textarea {
+  font: 400 1rem 'Roboto', sans-serif;
+}
+
+button {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ol,
+ul {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+
+/* Desktop*/
+@media (max-width: 1080px) { html { font-size: 93.75%; } }
+
+
+
+/* Scrollbar */
+/*  ::-webkit-scrollbar              { /* 1 *-/ }  */
+/*  ::-webkit-scrollbar-button       { /* 2 *-/ }  */
+/*  ::-webkit-scrollbar-track        { /* 3 *-/ }  */
+/*  ::-webkit-scrollbar-track-piece  { /* 4 *-/ }  */
+/*  ::-webkit-scrollbar-thumb        { /* 5 *-/ }  */
+/*  ::-webkit-scrollbar-corner       { /* 6 *-/ }  */
+/*  ::-webkit-resizer                { /* 7 *-/ }  */
+
+
+
+/* 1 */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar:horizontal {
+  height: 7px;
+}
+::-webkit-scrollbar,
+::-webkit-scrollbar:horizontal {
+  background: transparent;   /*default: #F4F4F4*/
+}
+/* 5 */
+::-webkit-scrollbar-thumb {
+  background: var(--purple-dark);   /*default: #dad7d7*/
+
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+/* 6 */
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
