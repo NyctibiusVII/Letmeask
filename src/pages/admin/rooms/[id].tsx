@@ -34,7 +34,7 @@ export default function RoomQAIDAdmin() {
     return (
         <div className={styles.container}>
             <Head>
-                <title>Room Q&amp;A | Letmeask</title>
+                <title>Room Q&amp;A - Admin | Letmeask</title>
             </Head>
 
             <Sidebar />

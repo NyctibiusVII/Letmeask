@@ -1,9 +1,13 @@
-import { RoomCode }   from './roomCode'
-import { RoomButton } from './roomButton'
+import { RoomCode }     from './roomCode'
+import { RoomButton }   from './roomButton'
+import { ThemeChanger } from './themeChanger'
+
+import { useTheme } from 'next-themes'
 
 import { database } from '../services/firebase'
 
-import logo from '../../public/icons/logo.svg'
+import logoL from '../../public/icons/logo/light.svg'
+import logoD from '../../public/icons/logo/dark.svg'
 
 import Router, { useRouter } from 'next/router'
 import Image  from 'next/image'
@@ -11,6 +15,7 @@ import styles from '../styles/components/Sidebar.module.scss'
 
 export function Sidebar() {
     const { id: roomId } = useRouter().query
+    const { theme } = useTheme()
 
     async function handleEndRoom() {
         await database.ref(`rooms/${roomId}`).update({
@@ -33,7 +38,7 @@ export function Sidebar() {
         <header className={styles.container}>
             <div className={styles.content}>
                 <Image
-                    src={logo}
+                    src={theme === 'light' ? logoL : logoD}
                     alt="Logo Letmeask"
                     height={imgSizeMedium}
                     width={imgSizeMedium}
@@ -46,6 +51,8 @@ export function Sidebar() {
                         // - Verificar se é admin para add a RoomButton
                     }
                     <RoomButton isOutlined onClick={handleEndRoom}>Encerrar sala</RoomButton>
+
+                    <ThemeChanger />
                 </div>
             </div>
         </header>

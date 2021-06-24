@@ -1,7 +1,7 @@
 .container {
     height: 3rem;
 
-    background-color: var(--purple);
+    background-color: var(--highlight);
     color: var(--white);
     border: 0;
     font-weight: 500;
@@ -15,17 +15,15 @@
     align-items: center;
 
     /* - Next/Image */
-    > div {
-        margin-right: 0.5rem !important;
-    }
+    > div { margin-right: 0.5rem !important; }
 
     &.outlined {
-        background: var(--white);
-        color: var(--purple);
-        border: 1px solid var(--purple);
+        background: var(--background-roomBootom);
+        color: var(--highlight);
+        border: 1px solid var(--highlight);
     }
     &:not(:disabled):hover {
-        background-color: var(--purple-dark);
+        background-color: var(--lowdark);
         color: var(--white);
     }
     &:disabled {

@@ -18,7 +18,7 @@
                 color: var(--text);
             }
             span {
-                background-color: var(--pink-dark);
+                background-color: var(--background-count-questions);
                 color: var(--white);
                 font: 500 0.8rem 'Poppins', sans-serif;
 
@@ -87,13 +87,13 @@
 
                     button {
                         background: transparent;
-                        color: var(--purple);
+                        color: var(--highlight);
                         border: 0;
                         font: 500 0.8rem 'Poppins', sans-serif;
 
                         text-decoration: underline;
 
-                        &:hover { color: var(--purple-dark); }
+                        &:hover { color: var(--lowdark); }
                     }
                 }
                 button { margin-top: 0; }
@@ -109,7 +109,10 @@
 
                 gap: 0.5rem;
 
-                &:hover { filter: brightness(0.7); }
+                &:hover {
+                    filter: invert(45%) sepia(83%) saturate(5116%) hue-rotate(329deg) brightness(97%) contrast(87%);
+                    //filter: brightness(0.7);
+                 }
             }
         }
     }

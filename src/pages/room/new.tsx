@@ -7,8 +7,10 @@ import {
 } from 'react'
 import { database } from '../../services/firebase'
 import { useAuth }  from '../../hooks/useAuth'
+import { useTheme } from 'next-themes'
 
-import logo from '../../../public/icons/logo.svg'
+import logoL from '../../../public/icons/logo/light.svg'
+import logoD from '../../../public/icons/logo/dark.svg'
 
 import Head   from 'next/head'
 import Link   from 'next/link'
@@ -18,6 +20,7 @@ import styles from '../../styles/pages/NewRoom.module.scss'
 
 export default function NewRoom() {
     const { user } = useAuth()
+    const { theme } = useTheme()
     const [ newRoom, setNewRoom ] = useState('')
 
     async function handleCreateRoom(event: FormEvent) {
@@ -31,7 +34,7 @@ export default function NewRoom() {
             authorId: user?.id
         })
 
-        Router.push(`rooms/${firebaseRoom.key}`) // - Add 'admin/rooms/...' to Production
+        Router.push(`/admin/rooms/${firebaseRoom.key}`)
     }
 
     const
@@ -46,7 +49,7 @@ export default function NewRoom() {
     return (
         <div className={styles.container}>
             <Head>
-                <title>New room | Letmeask</title>
+                <title>Nova sala | Letmeask</title>
             </Head>
 
             <AsideIllustration />
@@ -54,7 +57,7 @@ export default function NewRoom() {
             <main>
                 <div className={styles.mainContent}>
                     <Image
-                        src={logo}
+                        src={theme === 'light' ? logoL : logoD}
                         alt="Logo Letmeask"
                         height={imgSizeMedium}
                         width={imgSizeMedium}

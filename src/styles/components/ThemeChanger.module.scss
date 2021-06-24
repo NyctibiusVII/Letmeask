@@ -1,0 +1,23 @@
+.lightDark {
+    background-color: var(--background-theme-changer);
+    border: 0;
+
+    padding: 0.55rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+
+    span {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: stretch;
+    }
+}

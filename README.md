@@ -42,6 +42,7 @@ Projeto desenvolvido para gerenciar perguntas, fazer perguntas em real-time com 
 * Login com Google e Github.
 * Modal Cookies consent.
 * Firebase.
+* Tema 'Light' e 'Dark'
 * Site responsivo.
 
 <details>
@@ -55,12 +56,15 @@ Projeto desenvolvido para gerenciar perguntas, fazer perguntas em real-time com 
 ✖ - Next PWA
 
 Funcionalidades:
-    - Trocar o tema da aplicação: Light e Dark
+    ✔ - Trocar o tema da aplicação: Light e Dark
     ✔ - Banco de dados externo (Firebase)
-    ✔ - oAuth github (Pagina de login)
     - Firebase:
         ✔ - Login com Google
         ✖ - Login com Github
+    ✖ - Toast:
+        ✖ - Sucesso
+        ✖ - Error
+        ✖ - Info
     ✖ - Modal:
         ✖ - Close room
         ✖ - Delete question
@@ -151,6 +155,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
   "dependencies": {
     "firebase": "^8.6.8",
     "next": "11.0.0",
+    "next-themes": "0.0.14",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "sass": "^1.35.1"

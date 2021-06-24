@@ -1,7 +1,7 @@
 .container {
     width: 100%;
 
-    background-color: var(--purple);
+    background-color: var(--highlight);
     color: var(--white);
 
     padding: 4rem 2rem;
@@ -19,7 +19,7 @@
         margin-top: 1rem;
     }
     p {
-        color: var(--background);
+        color: var(--aside-text);
         font-size: 1.5rem;
         line-height: 2rem;
 

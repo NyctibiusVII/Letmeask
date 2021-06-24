@@ -2,7 +2,7 @@
 
     main {
         max-width: 50rem;
-        
+
         padding: 0 2rem;
 
         margin: 0 auto;
@@ -18,7 +18,7 @@
                 color: var(--text);
             }
             span {
-                background-color: var(--pink-dark);
+                background-color: var(--background-count-questions);
                 color: var(--white);
                 font: 500 0.8rem 'Poppins', sans-serif;
 
@@ -53,6 +53,10 @@
                 -ms-border-radius: 0.5rem;
                 -o-border-radius: 0.5rem;
             }
+            ::-webkit-input-placeholder { color:  var(--placeholder); }
+            :-moz-placeholder { color:  var(--placeholder); }
+            ::-moz-placeholder { color:  var(--placeholder); }
+            :-ms-input-placeholder { color:  var(--dplaceholder); }
 
             .formFooter {
                 margin-top: 1rem;
@@ -87,13 +91,13 @@
 
                     button {
                         background: transparent;
-                        color: var(--purple);
+                        color: var(--highlight);
                         border: 0;
                         font: 500 0.8rem 'Poppins', sans-serif;
 
                         text-decoration: underline;
 
-                        &:hover { color: var(--purple-dark); }
+                        &:hover { color: var(--lowdark); }
                     }
                 }
                 button { margin-top: 0; }
@@ -116,9 +120,9 @@
                     align-items: flex-end;
 
                     &.liked {
-                        color: var(--purple);
+                        color: var(--highlight);
 
-                        svg path { stroke: var(--purple); }
+                        svg path { stroke: var(--highlight); }
                     }
                 }
 

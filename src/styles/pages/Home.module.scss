@@ -19,16 +19,14 @@
             text-align: center;
 
             /* - Next/Image */
-            > div > img {
-                align-self: center;
-            }
+            > div > img { align-self: center; }
 
             .createRoom {
                 height: 3rem;
 
-                background-color: var(--red-google);
-                color: var(--white);
-                border: 0;
+                background-color: var(--background-google);
+                color: var(--foreground-google);
+                border: 1px solid var(--border-google);
                 font-weight: 500;
 
                 padding: 0 1rem;
@@ -45,9 +43,7 @@
                     margin-right: 0.5rem !important;
                 }
 
-                &:hover {
-                    background-color: var(--red-google-dark);
-                }
+                &:hover { background-color: var(--shadow-background-google);  }
             }
 
             .separator {
@@ -89,7 +85,7 @@
                 input {
                   height: 3rem;
 
-                  background-color: var(--white);
+                  background-color: var(--background-input-room);
                   border: 1px solid var(--medium-gray);
 
                   padding: 0 1rem;
@@ -100,10 +96,12 @@
                   -ms-border-radius: 0.5rem;
                   -o-border-radius: 0.5rem;
                 }
+                ::-webkit-input-placeholder { color: var(--placeholder); }
+                :-moz-placeholder { color: var(--placeholder); }
+                ::-moz-placeholder { color: var(--placeholder); }
+                :-ms-input-placeholder { color: var(--dplaceholder); }
 
-                button {
-                    margin-top: 1rem;
-                }
+                button { margin-top: 1rem; }
             }
         }
     }
@@ -142,9 +140,7 @@
 }
 @media (min-width: 520px) {
     .container {
-        main {
-            padding: 5rem 2rem 6rem;
-        }
+        main { padding: 5rem 2rem 6rem; }
     }
 }
 /* ------- 'Mobile first' applied in this file ------- */

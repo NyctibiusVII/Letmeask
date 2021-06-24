@@ -1,66 +1,100 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    -webkit-transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    -moz-transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    -ms-transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    -o-transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 :root {
- /**
-  * Aplicada a regra de harmonia de cores.
-  *
-  * O tema GREEN e PURPLE é apropriado
-  * para daltônicos (Deuteranopia, Protanopia e Tritanopia).
-  *
-  * - Adobe Color
-  */
-  --white: #fff;
-  --black: #000;
+    --white: #fff;
+    --black: #000;
 
-  /* - THEME RED, GREEN, BLUE, PURPLE e PINK - */
-  --red-very-light  : #fff5f5;
-  --red-light       : #fa4362;
-  --red             : #e83f5b; /* e73f5d */
-  --red-dark        : #691c29; /* d73754 */
-  --red-google      : #ea4335;
-  --red-google-dark : #d33527;
+    --red-primary   : #e73f5d;
+    --red-secundary : #d73754;
 
-  --green-very-light : #77ff88;
-  --green-light      : #05eb6c;
-  --green            : #04d361; /* 500 */
-  --green-dark       : #04ba56;
-  --green-very-dark  : #039444;
+    --red-google-primary   : #ea4335;
+    --red-google-secundary : #d33527;
 
-  --blue-very-light   : #6787ff;
-  --blue-light        : #526dff;
-  --blue              : #485bff;
-  --blue-dark         : #4051e6;
+    --green-primary   : #05eb6c;
+    --green-secundary : #04d361;
 
-  --purple-very-light : #bca7fd;
-  --purple-light      : #967cff;
-  --purple            : #835afd;
-  --purple-dark       : #6f4bd8;
+    --blue: #485bff;
 
-  --pink-very-light : #efb5fc;
-  --pink-light      : #d67ee2;
-  --pink            : #ff59f8;
-  --pink-dark       : #e559f9;
+    --purple-primary   : #835afd;
+    --purple-secundary : #6f4bd8;
 
-  --purple-gradient: linear-gradient(139.44deg, var(--blue) 0%, var(--pink) 96.19%);
-  /*--------------------------------------------*/
+    --pink: #ff59f8;
 
-  --details    : #fefefe;
-  --background : #f8f8f8;
-  --gray-line  : #e2e2e2;
-  --shadow     : #050206;
-
-  --light-gray  : #dbdcdd;
-  --medium-gray : #a8a8b3;
-  --dark-gray   : #737380;
-
-  --title : #2e384d;
-
-  --text-highlight : #b3b9ff;
-  --text           : #29292e;
+    --gradient-bpp: linear-gradient(139.44deg, var(--blue) 0%, var(--pink) 96.19%);
 }
+[data-theme='light'] {
+    --background-google        : var(--red-google-primary);
+    --foreground-google        : var(--white);
+    --border-google            : var(--background-google);
+    --shadow-background-google : var(--red-google-secundary);
+
+    --highlight : var(--purple-primary);
+    --lowdark   : var(--purple-secundary);
+
+    --highlight-secundary : var(--green-primary);
+    --lowdark-secundary   : var(--green-secundary);
+
+    --background-count-questions : var(--pink);
+    --foreground-link            : var(--pink);
+
+    --details    : #fefefe;
+    --background : #f8f8f8;
+    --gray-line  : #e2e2e2;
+
+    --medium-gray : #a8a8b3;
+    --dark-gray   : #737380;
+
+    --placeholder : var(--dark-gray);
+    --aside-text  : #dcd1ff;
+    --text        : #29292e;
+
+    --background-input-room    : var(--white);
+    --background-room-code     : var(--white);
+    --background-roomBootom    : var(--white);
+    --background-theme-changer : #efefef;
+}
+[data-theme='dark'] {
+    --background-google        : var(--white);
+    --foreground-google        : var(--black);
+    --border-google            : var(--black);
+    --shadow-background-google : #ededed;
+
+    --highlight : var(--green-primary);
+    --lowdark   : var(--green-secundary);
+
+    --highlight-secundary : var(--purple-primary);
+    --lowdark-secundary   : var(--purple-secundary);
+
+    --background-count-questions : var(--highlight-secundary);
+    --foreground-link            : var(--highlight-secundary);
+
+    --details    : #343746;
+    --background : #282a36;
+    --gray-line  : #21222c;
+
+    --medium-gray : #6272a4;
+    --dark-gray   : #9da4bf;
+
+    --placeholder : var(--medium-gray);
+    --aside-text  : #dfffe3;
+    --text        : var(--white);
+
+    --background-input-room    : var(--details);
+    --background-room-code     : var(--details);
+    --background-roomBootom    : var(--details);
+    --background-theme-changer : var(--details);
+}
+
+
 
 body {
     background-color: var(--background);
@@ -71,34 +105,37 @@ body,
 button,
 input,
 textarea {
-  font: 400 1rem 'Roboto', sans-serif;
+    font: 400 1rem 'Roboto', sans-serif;
 }
 
 button {
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
 
-  border-radius: 0.5rem;
-  -webkit-border-radius: 0.5rem;
-  -moz-border-radius: 0.5rem;
-  -ms-border-radius: 0.5rem;
-  -o-border-radius: 0.5rem;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
 
-  cursor: pointer;
+    cursor: pointer;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: var(--foreground-link);
+    text-decoration: none;
+
+    &:hover { text-decoration: underline; }
 }
 ol,
 ul {
-  padding-left: 0;
-  margin-top: 0;
-  margin-bottom: 0;
+    padding-left: 0;
+
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 
@@ -121,26 +158,26 @@ ul {
 
 /* 1 */
 ::-webkit-scrollbar {
-  width: 7px;
+    width: 0.438em;
 }
 ::-webkit-scrollbar:horizontal {
-  height: 7px;
+    height: 0.438em;
 }
 ::-webkit-scrollbar,
 ::-webkit-scrollbar:horizontal {
-  background: transparent;   /*default: #F4F4F4*/
+    background: transparent;   /* - Default: #F4F4F4 */
 }
 /* 5 */
 ::-webkit-scrollbar-thumb {
-  background: var(--purple-dark);   /*default: #dad7d7*/
+    background: var(--highlight); /* - Default:  #dad7d7 */
 
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
+    border-radius: 0.313em;
+    -webkit-border-radius: 0.313em;
+    -moz-border-radius: 0.313em;
+    -ms-border-radius: 0.313em;
+    -o-border-radius: 0.313em;
 }
 /* 6 */
 ::-webkit-scrollbar-corner {
-  background: transparent;
+    background: transparent;
 }

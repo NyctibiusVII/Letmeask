@@ -1,8 +1,8 @@
 .container {
     height: 2.5rem;
 
-    background-color: var(--white);
-    border: 1px solid var(--purple);
+    background-color: var(--background-room-code);
+    border: 1px solid var(--highlight);
 
     display: flex;
     align-items: stretch;
@@ -15,11 +15,11 @@
 
     overflow: hidden;
 
-    &:hover { border: 1px solid var(--purple-dark); }
-    &:hover div { background-color: var(--purple-dark); }
+    &:hover { border: 1px solid var(--lowdark); }
+    &:hover div { background-color: var(--lowdark); }
 
     div {
-        background-color: var(--purple);
+        background-color: var(--highlight);
 
         padding: 0 0.75rem;
 
