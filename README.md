@@ -65,11 +65,11 @@ Funcionalidades:
         ✖ - Close room
         ✖ - Delete question
     - Telas:
-        ✔ - Home(index)
-        ✔ - createRoom
-        - roomQA:
-            - user
-            - admin
+        ✔ - Home('/')
+        ✔ - createRoom('/room/new')
+        - roomsQA:
+            - user('/rooms/[id]')
+            - admin('/admin/rooms/[id]')
         - 404
 ```
 </details>
@@ -196,7 +196,7 @@ Feito com ♥ by Rocketseat :wave: [Participe da nossa comunidade!](https://disc
 | Dia 1 | #Together          |
 | Dia 2 | #Unidade           |
 | Dia 3 | #EmBuscaDeEvolução |
-| Dia 4 | - |
+| Dia 4 | #Legacy            |
 | Dia 5 | - |
 
 ## Licença ⚖️

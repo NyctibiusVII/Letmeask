@@ -1,0 +1,44 @@
+.container {
+        background: var(--details);
+        box-shadow: 0 0.2rem 0.75rem rgb(0 0 0 / 4%);
+
+        padding: 1.5rem;
+
+        border-radius: 0.5rem;
+        -webkit-border-radius: 0.5rem;
+        -moz-border-radius: 0.5rem;
+        -ms-border-radius: 0.5rem;
+        -o-border-radius: 0.5rem;
+
+    &+.container { margin-top: 0.5rem; }
+
+    p { color: var(--text); }
+
+    footer {
+        margin-top: 1.5rem;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .userInfo {
+            display: flex;
+            align-items: center;
+
+            /* - Next/Image */
+            > div > img {
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+            }
+            span {
+                color: var(--dark-gray);
+                font-size: 0.8rem;
+
+                margin-left: 0.5rem;
+            }
+        }
+    }
+}

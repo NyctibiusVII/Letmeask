@@ -1,9 +1,10 @@
 # *
 User-agent: *
 Allow: /
-Allow: /room
 Allow: /room/new
-Allow: /room/[id]
+Allow: /rooms
+Allow: /rooms/[id]
+Allow: admin/rooms/[id]
 
 # Host
 Host: https://letmeask-nyctibiusvii.vercel.app

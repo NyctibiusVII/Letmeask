@@ -2,7 +2,7 @@
 
     main {
         max-width: 50rem;
-        
+
         padding: 0 2rem;
 
         margin: 0 auto;
@@ -107,20 +107,7 @@
                 background: transparent;
                 border: 0;
 
-                &.likeButton {
-                    color: var(--text);
-
-                    gap: 0.5rem;
-
-                    display: flex;
-                    align-items: flex-end;
-
-                    &.liked {
-                        color: var(--purple);
-
-                        svg path { stroke: var(--purple); }
-                    }
-                }
+                gap: 0.5rem;
 
                 &:hover { filter: brightness(0.7); }
             }

@@ -5,12 +5,13 @@ import styles from '../styles/components/AsideIllustration.module.scss'
 
 export function AsideIllustration() {
     const
-        imgSizeGiga      = 520,
-        imgSizeLarge     = 120,
-        imgSizeMedium    = 80,
-        imgSizeSmall     = 40,
-        imgSizelittle    = 20,
-        imgSizeMini      = 16
+        imgSizeGiga   = 520,
+        imgSizeLarge  = 120,
+        imgSizeMedium = 80,
+        imgSizeSmall  = 40,
+        imgSizeShort  = 32,
+        imgSizelittle = 20,
+        imgSizeMini   = 16
 
     return (
         <aside className={styles.container}>

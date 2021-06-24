@@ -1,7 +1,6 @@
-import { ButtonHTMLAttributes } from 'react'
+import { RoomButtonProps } from '../interfaces/roomTypes'
 
 import styles from '../styles/components/RoomButton.module.scss'
 
-type RoomButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
-
-export const RoomButton = (roomButtonProps: RoomButtonProps) => <button className={styles.container} {...roomButtonProps} />
+export const RoomButton = ({ isOutlined = false, ...props }: RoomButtonProps) =>
+    <button className={`${styles.container} ${isOutlined ? styles.outlined : ''}`} {...props} />

@@ -1,7 +1,10 @@
 import { AsideIllustration } from '../components/asideIllustration'
 import { RoomButton }        from '../components/roomButton'
 
-import { FormEvent, useState } from 'react'
+import {
+    FormEvent,
+    useState
+} from 'react'
 import { database } from '../services/firebase'
 import { useAuth }  from '../hooks/useAuth'
 
@@ -35,16 +38,22 @@ export default function Home() {
             return
         }
 
-        Router.push(`/room/${roomCode}`)
+        if (roomRef.val().closedAt) {
+            alert('Esta sala ja foi encerrada!')
+            return
+          }
+
+        Router.push(`/rooms/${roomCode}`)
     }
 
     const
-        imgSizeGiga      = 520,
-        imgSizeLarge     = 120,
-        imgSizeMedium    = 80,
-        imgSizeSmall     = 40,
-        imgSizelittle    = 20,
-        imgSizeMini      = 16
+        imgSizeGiga   = 520,
+        imgSizeLarge  = 120,
+        imgSizeMedium = 80,
+        imgSizeSmall  = 40,
+        imgSizeShort  = 32,
+        imgSizelittle = 20,
+        imgSizeMini   = 16
 
     return (
         <div className={styles.container}>

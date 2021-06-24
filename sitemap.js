@@ -20,7 +20,7 @@ module.exports = {
         policies: [
             {
                 userAgent: '*',
-                allow: ['/', '/room', '/room/new', '/room/[id]']
+                allow: ['/', /*'/room',*/ '/room/new', '/rooms', '/rooms/[id]', /*'/admin',*/ 'admin/rooms/[id]']
             }
         ]
     }

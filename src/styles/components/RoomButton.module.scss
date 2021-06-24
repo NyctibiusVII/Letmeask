@@ -19,10 +19,15 @@
         margin-right: 0.5rem !important;
     }
 
+    &.outlined {
+        background: var(--white);
+        color: var(--purple);
+        border: 1px solid var(--purple);
+    }
     &:not(:disabled):hover {
         background-color: var(--purple-dark);
+        color: var(--white);
     }
-
     &:disabled {
         opacity: 0.6;
         cursor: not-allowed !important;

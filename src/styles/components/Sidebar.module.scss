@@ -12,5 +12,16 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+
+        > div {
+            display: flex;
+            gap: 1rem;
+
+            button {
+                height: 2.5rem;
+
+                margin-top: 0;
+            }
+        }
     }
 }
