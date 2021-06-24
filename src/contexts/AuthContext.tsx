@@ -78,8 +78,10 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
         }
     }
     async function signOut() {
-        firebase.auth().signOut().then(() => {
+        auth.signOut()
+        .then(() => {
             // Sign-out successful.
+            setUser(undefined)
         }).catch(err => {
           // An error happened.
         })

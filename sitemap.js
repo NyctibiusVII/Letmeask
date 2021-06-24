@@ -1,5 +1,5 @@
 module.exports = {
-    siteUrl: 'https://letmeask-nyctibiusvii.vercel.app', // - ['https://letmeask-nyctibiusvii.vercel.app', 'https://letmeask-git-main-nyctibiusvii.vercel.app', 'https://letmeask-six.vercel.app'],
+    siteUrl: 'https://letmeask-nyctibiusvii.vercel.app',
     changefreq: 'daily',
     priority: 0.7,
     sitemapSize: 5000,
@@ -9,10 +9,10 @@ module.exports = {
     // - Default transformation function
     transform: async (config, path) => {
         return {
-            loc: path, // => - This will be exported as http(s)://<config.siteUrl>/<path>
-            changefreq: config.changefreq,
-            priority: config.priority,
-            lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
+            loc:           path, // => - This will be exported as http(s)://<config.siteUrl>/<path>
+            changefreq:    config.changefreq,
+            priority:      config.priority,
+            lastmod:       config.autoLastmod ? new Date().toISOString() : undefined,
             alternateRefs: config.alternateRefs ?? [],
         }
     },
@@ -20,7 +20,7 @@ module.exports = {
         policies: [
             {
                 userAgent: '*',
-                allow: ['/', '/createRoom']
+                allow: ['/', '/room', '/room/new', '/room/[id]']
             }
         ]
     }

@@ -1,0 +1,16 @@
+.container {
+    border-bottom: 1px solid var(--gray-line);
+
+    padding: 1.5rem;
+
+    .content {
+        max-width: 70rem;
+
+        margin: 0 auto;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

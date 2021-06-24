@@ -1,0 +1,48 @@
+.container {
+    height: 2.5rem;
+
+    background-color: var(--white);
+    border: 1px solid var(--purple);
+
+    display: flex;
+    align-items: stretch;
+
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+
+    overflow: hidden;
+
+    &:hover { border: 1px solid var(--purple-dark); }
+    &:hover div { background-color: var(--purple-dark); }
+
+    div {
+        background-color: var(--purple);
+
+        padding: 0 0.75rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+    }
+    span {
+        width: 14.5rem;
+
+        font: 500 0.8rem 'Poppins', sans-serif;
+
+        padding: 0 1rem 0 0.75rem;
+
+        display: block;
+        align-self: center;
+
+        flex: 1;
+    }
+}

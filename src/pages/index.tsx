@@ -1,26 +1,41 @@
-import { auth, firebase } from '../services/firebase'
-import { useAuth }        from '../hooks/useAuth'
-
 import { AsideIllustration } from '../components/asideIllustration'
 import { RoomButton }        from '../components/roomButton'
 
-import Router from 'next/router'
+import { FormEvent, useState } from 'react'
+import { database } from '../services/firebase'
+import { useAuth }  from '../hooks/useAuth'
 
 import logo       from '../../public/icons/logo.svg'
 import googleIcon from '../../public/icons/google-icon.svg'
 import loggedIn   from '../../public/icons/log-in.svg'
 
 import Head   from 'next/head'
+import Router from 'next/router'
 import Image  from 'next/image'
 import styles from '../styles/pages/Home.module.scss'
 
 export default function Home() {
     const { user, signInWithGoogle } = useAuth()
+    const [ roomCode, setRoomCode ] = useState('')
 
     const handleCreateRoom = async() => {
         if(!user) await signInWithGoogle()
 
-        Router.push('/createRoom')
+        Router.push('/room/new')
+    }
+    const handleJoinRoom = async(event: FormEvent) => {
+        event.preventDefault()
+
+        if (roomCode.trim() === '') return
+
+        const roomRef = await database.ref(`rooms/${roomCode}`).get()
+
+        if (!roomRef.exists()) {
+            alert('Sala não existe')
+            return
+        }
+
+        Router.push(`/room/${roomCode}`)
     }
 
     const
@@ -59,10 +74,12 @@ export default function Home() {
 
                     <small className={styles.separator}>ou entre em uma sala</small>
 
-                    <form>
+                    <form onSubmit={handleJoinRoom}>
                         <input
                             type="text"
                             placeholder="Digite o código da sala"
+                            value={roomCode}
+                            onChange={event => setRoomCode(event.target.value)}
                             required
                         />
                         <RoomButton type="submit">

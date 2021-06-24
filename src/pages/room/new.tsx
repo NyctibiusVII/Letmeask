@@ -1,16 +1,36 @@
-import '../services/firebase'
+import { AsideIllustration } from '../../components/asideIllustration'
+import { RoomButton }        from '../../components/roomButton'
 
-import { AsideIllustration } from '../components/asideIllustration'
-import { RoomButton }        from '../components/roomButton'
+import { FormEvent, useState } from 'react'
+import { database } from '../../services/firebase'
+import { useAuth }  from '../../hooks/useAuth'
 
-import logo from '../../public/icons/logo.svg'
+import logo from '../../../public/icons/logo.svg'
 
 import Head   from 'next/head'
 import Link   from 'next/link'
+import Router from 'next/router'
 import Image  from 'next/image'
-import styles from '../styles/pages/CreateRoom.module.scss'
+import styles from '../../styles/pages/NewRoom.module.scss'
 
-export default function CreateRoom() {
+export default function NewRoom() {
+    const { user } = useAuth()
+    const [ newRoom, setNewRoom ] = useState('')
+
+    async function handleCreateRoom(event: FormEvent) {
+        event.preventDefault()
+
+        if (newRoom.trim() === '') return
+
+        const roomRef = database.ref('rooms')
+        const firebaseRoom = await roomRef.push({
+            title: newRoom,
+            authorId: user?.id
+        })
+
+        Router.push(`/room/${firebaseRoom.key}`)
+    }
+
     const
         imgSizeGiga      = 520,
         imgSizeLarge     = 120,
@@ -38,10 +58,12 @@ export default function CreateRoom() {
 
                     <h2>Criar uma nova sala</h2>
 
-                    <form>
+                    <form onSubmit={handleCreateRoom}>
                         <input
                             type="text"
                             placeholder="Nome da sala"
+                            value={newRoom}
+                            onChange={event => setNewRoom(event.target.value)}
                             required
                         />
                         <RoomButton type="submit">

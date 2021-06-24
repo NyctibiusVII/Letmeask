@@ -191,11 +191,11 @@ Para construir essa aplicação tive a ajuda do professor **Diego Fernandes** da
 Feito com ♥ by Rocketseat :wave: [Participe da nossa comunidade!](https://discord.gg/YxU7fJT)
 
 ### Hashtags \#
-| Dias  | Hashtags  |
-|-------|-----------|
-| Dia 1 | #Together |
-| Dia 2 | #Unidade  |
-| Dia 3 | - |
+| Dias  | Hashtags           |
+|-------|--------------------|
+| Dia 1 | #Together          |
+| Dia 2 | #Unidade           |
+| Dia 3 | #EmBuscaDeEvolução |
 | Dia 4 | - |
 | Dia 5 | - |
 

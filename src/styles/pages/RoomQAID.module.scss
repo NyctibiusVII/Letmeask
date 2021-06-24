@@ -1,0 +1,101 @@
+.container {
+
+    main {
+        max-width: 50rem;
+
+        margin: 0 auto;
+
+        .roomTitle {
+            margin: 2rem 0 1.5rem;
+
+            display: flex;
+            align-items: center;
+
+            h1 {
+                font: 700 1.5rem 'Poppins', sans-serif;
+                color: var(--text);
+            }
+            span {
+                background-color: var(--pink-dark);
+                color: var(--white);
+                font: 500 0.8rem 'Poppins', sans-serif;
+
+                padding: 0.5rem 1rem;
+
+                margin-left: 1rem;
+
+                border-radius: 1rem;
+                -webkit-border-radius: 1rem;
+                -moz-border-radius: 1rem;
+                -ms-border-radius: 1rem;
+                -o-border-radius: 1rem;
+            }
+        }
+
+        form {
+            textarea {
+                width: 100%;
+                min-height: 8rem;
+
+                background-color: var(--details);
+                box-shadow: 0 0.2rem 0.75rem rgb(0 0 0 / 4%);
+                border: 0;
+
+                padding: 1rem;
+
+                resize: vertical;
+
+                border-radius: 0.5rem;
+                -webkit-border-radius: 0.5rem;
+                -moz-border-radius: 0.5rem;
+                -ms-border-radius: 0.5rem;
+                -o-border-radius: 0.5rem;
+            }
+
+            .formFooter {
+                margin-top: 1rem;
+
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .userInfo {
+                    display: flex;
+                    align-items: center;
+
+                    /* - Next/Image */
+                    > div > img {
+                        border-radius: 50%;
+                        -webkit-border-radius: 50%;
+                        -moz-border-radius: 50%;
+                        -ms-border-radius: 50%;
+                        -o-border-radius: 50%;
+                    }
+                    span {
+                        color: var(--text);
+                        font: 500 0.8rem 'Poppins', sans-serif;
+
+                        margin-left: 0.5rem;
+                    }
+                }
+
+                > span {
+                    color: var(--dark-gray);
+                    font: 500 0.8rem 'Poppins', sans-serif;
+
+                    button {
+                        background: transparent;
+                        color: var(--purple);
+                        border: 0;
+                        font: 500 0.8rem 'Poppins', sans-serif;
+
+                        text-decoration: underline;
+
+                        &:hover { color: var(--purple-dark); }
+                    }
+                }
+                button { margin-top: 0; }
+            }
+        }
+    }
+}
