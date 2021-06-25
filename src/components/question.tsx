@@ -3,7 +3,15 @@ import { QuestionCardProps } from '../interfaces/questionsType'
 import Image  from 'next/image'
 import styles from '../styles/components/Question.module.scss'
 
-export function Question({ content, author, children }: QuestionCardProps) {
+export function Question(
+    {
+        content,
+        author,
+        children,
+        isAnswered = false,
+        isHighLighted = false
+    }: QuestionCardProps
+    ) {
     const
         imgSizeGiga   = 520,
         imgSizeLarge  = 120,
@@ -14,7 +22,13 @@ export function Question({ content, author, children }: QuestionCardProps) {
         imgSizeMini   = 16
 
     return (
-        <div className={styles.container}>
+        <div
+            className={`
+                ${styles.container}
+                ${isAnswered                   ? styles.answered    : ''}
+                ${isHighLighted && !isAnswered ? styles.highLighted : ''}
+            `}
+        >
             <p>{content}</p>
 
             <footer>

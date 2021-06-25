@@ -30,8 +30,8 @@ export type Questions = {
         name:   string
         avatar: string
     }
-    isHighLighted: boolean
-    isAnswered:    boolean
+    isAnswered?:    boolean
+    isHighLighted?: boolean
     likeCount: number
     likeId:    string | undefined
 }
@@ -43,4 +43,6 @@ export type QuestionCardProps = {
         avatar: string
     }
     children?: ReactNode
+    isAnswered?:    boolean
+    isHighLighted?: boolean
 }

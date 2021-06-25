@@ -12,6 +12,15 @@
 
     &+.container { margin-top: 0.5rem; }
 
+    &.highLighted {
+        background: var(--placeholder-highlight);
+        border: 1px solid var(--highlight);
+
+        footer .userInfo span { color: var(--user-info-text); }
+    }
+
+    &.answered { background: var(--placeholder-lowdark); }
+
     p { color: var(--text); }
 
     footer {
@@ -39,6 +48,11 @@
 
                 margin-left: 0.5rem;
             }
+        }
+
+        > div {
+            display: flex;
+            gap: 1em;
         }
     }
 }
