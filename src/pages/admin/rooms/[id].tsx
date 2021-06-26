@@ -3,15 +3,19 @@ import { RoomButton } from '../../../components/roomButton'
 import { Question }   from '../../../components/question'
 import { CreatedBy }  from '../../../components/CreatedBy'
 
-import { database } from '../../../services/firebase'
-import { useRoom }  from '../../../hooks/useRoom'
-import { useAuth }  from '../../../hooks/useAuth'
+import {
+    useEffect,
+    useState
+} from 'react'
+import { database }  from '../../../services/firebase'
+import { useRoom }   from '../../../hooks/useRoom'
+import { useAuth }   from '../../../hooks/useAuth'
 
 import emptyQuestions from '../../../../public/icons/empty-questions.svg'
 
-import Head from 'next/head'
+import Head   from 'next/head'
 import Router, { useRouter } from 'next/router'
-import Image from 'next/image'
+import Image  from 'next/image'
 import styles from '../../../styles/pages/RoomQAIDAdmin.module.scss'
 
 export default function RoomQAIDAdmin() {
@@ -19,6 +23,28 @@ export default function RoomQAIDAdmin() {
 
     const { user } = useAuth()
     const { questions, title } = useRoom(roomId)
+    const [ isClosed, setIsClosed ] = useState(false)
+
+    useEffect(() => {
+        if (roomId === undefined) return // - Prevent undefined in loading
+        if (user   === undefined) return // - Prevent undefined in loading
+
+        const roomRef = database.ref(`rooms/${roomId}`)
+
+        roomRef.get().then(room => {
+            if (room.val().closedAt) { // - Esta sala já foi encerrada.
+                // - Redirect
+                alert('Esta sala ja foi encerrada!')
+                Router.push('/')
+            } else setIsClosed(true)
+
+            if (room.val().authorId !== user?.id) { // - O usuário atual não é o criador desta sala.
+                // - Redirect
+                alert('Você não tem autorazação para entar nesta sala!')
+                Router.push('/')
+            } else return
+        })
+    }, [ roomId, user ])
 
     async function handleEndRoom() {
         await database.ref(`rooms/${roomId}`).update({
@@ -40,10 +66,16 @@ export default function RoomQAIDAdmin() {
         })
     }
 
-    async function handleHighlightQuestion(questionId: string) {
-        await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
-            isHighLighted: true,
-        })
+    async function handleHighlightQuestion(questionId: string, highLighted: boolean | undefined) {
+        if (highLighted) {
+            await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
+                isHighLighted: false,
+            })
+        } else {
+            await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
+                isHighLighted: true,
+            })
+        }
     }
 
     const
@@ -62,13 +94,15 @@ export default function RoomQAIDAdmin() {
             </Head>
 
             <Sidebar>
-                <RoomButton
-                    title="Encerrar sala"
-                    onClick={handleEndRoom}
-                    isOutlined
-                >
-                    Encerrar sala
-                </RoomButton>
+                { isClosed && (
+                    <RoomButton
+                        title="Encerrar sala"
+                        onClick={handleEndRoom}
+                        isOutlined
+                    >
+                        Encerrar sala
+                    </RoomButton>
+                ) }
             </Sidebar>
 
             <main>
@@ -104,10 +138,6 @@ export default function RoomQAIDAdmin() {
                         </span>
                     </span>
 
-
-                    {
-                    //https://nextlevelweek.com/episodios/react/aula-5/edicao/6
-                    }
                     { questions.length > 0 && (
                         <>
                             { questions.length > 1 ? (
@@ -148,7 +178,7 @@ export default function RoomQAIDAdmin() {
                                                     type="button"
                                                     title="Destacar pergunta"
                                                     aria-label="Destacar pergunta"
-                                                    onClick={() => handleHighlightQuestion(question.id)}
+                                                    onClick={() => handleHighlightQuestion(question.id, question.isHighLighted)}
                                                 >
                                                     <svg id={styles.answer} width={imgSizelittle + 4} height={imgSizelittle + 4} viewBox={`0 0 ${imgSizelittle + 4} ${imgSizelittle + 4}`} fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path fillRule="evenodd" clipRule="evenodd" d="M12 17.9999H18C19.657 17.9999 21 16.6569 21 14.9999V6.99988C21 5.34288 19.657 3.99988 18 3.99988H6C4.343 3.99988 3 5.34288 3 6.99988V14.9999C3 16.6569 4.343 17.9999 6 17.9999H7.5V20.9999L12 17.9999Z" stroke="var(--dark-gray)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

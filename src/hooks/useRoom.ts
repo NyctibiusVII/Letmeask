@@ -35,8 +35,10 @@ export function useRoom(roomId: string | string[] | undefined) {
                 }
             })
 
+            const sortedQuestions = parsedQuestion.slice(0).reverse() // - Ordenando por mais recente
+
             setTitle(databaseRoom.title)
-            setQuestions(parsedQuestion)
+            setQuestions(sortedQuestions)
         })
 
         return () => roomRef.off('value')

@@ -37,7 +37,7 @@ export default function Home() {
         if (roomRef.val().closedAt) {
             alert('Esta sala ja foi encerrada!')
             return
-          }
+        }
 
         Router.push(`/rooms/${roomCode}`)
     }

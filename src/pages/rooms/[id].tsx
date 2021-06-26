@@ -15,7 +15,7 @@ import { useRoom }  from '../../hooks/useRoom'
 import { SendQuestions } from '../../interfaces/questionsType'
 
 import Head from 'next/head'
-import { useRouter } from 'next/router'
+import Router, { useRouter } from 'next/router'
 import Image from 'next/image'
 import styles from '../../styles/pages/RoomQAID.module.scss'
 
@@ -27,6 +27,20 @@ export default function RoomQAID() {
     const [ newQuestion, setNewQuestion ] = useState('')
     const maxCharacters  = 1000
     const restCharacters = maxCharacters - newQuestion.length
+
+    useEffect(() => {
+        if (roomId === undefined) return // - Prevent undefined in loading
+
+        const roomRef = database.ref(`rooms/${roomId}`)
+
+        roomRef.get().then(room => {
+            if (room.val().closedAt) { // - Esta sala já foi encerrada.
+                // - Redirect
+                alert('Esta sala ja foi encerrada!')
+                Router.push('/')
+            }
+        })
+    }, [ roomId ])
 
     const handleSendQuestion = async (event: FormEvent) => {
         event.preventDefault()
