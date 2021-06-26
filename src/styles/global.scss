@@ -13,6 +13,20 @@
     --white: #fff;
     --black: #000;
 
+    /* - Dracula THEME:              */
+    --dracula-background   : #282a36;
+    --dracula-current-line : #44475a;
+    --dracula-foreground   : #f8f8f2;
+    --dracula-comment      : #6272a4;
+    --dracula-cyan         : #8be9fd;
+    --dracula-green        : #50fa7b;
+    --dracula-orange       : #ffb86c;
+    --dracula-pink         : #ff79c6;
+    --dracula-purple       : #bd93f9;
+    --dracula-red          : #ff5555;
+    --dracula-yellow       : #f1fa8c;
+    /* ----------------------------- */
+
     --red-primary   : #e73f5d;
     --red-secundary : #d73754;
 
@@ -47,7 +61,7 @@
     --foreground-link            : var(--pink);
 
     --details    : #fefefe;
-    --background : #f8f8f8;
+    --background : var(--dracula-foreground);
     --gray-line  : #e2e2e2;
 
     --medium-gray : #a8a8b3;
@@ -58,12 +72,25 @@
     --placeholder           : var(--dark-gray);
     --placeholder-lowdark   : #DBDCDD;
     --aside-text            : #dcd1ff;
+    --created-by            : var(--dracula-current-line);
     --text                  : #29292e;
 
-    --background-input-room    : var(--white);
-    --background-room-code     : var(--white);
-    --background-roomBootom    : var(--white);
-    --background-theme-changer : #efefef;
+    --background-selection-mouse: var(--dracula-cyan);
+    --foreground-selection-mouse: var(--dracula-background);
+
+    --background-input-room       : var(--white);
+    --background-room-code        : var(--white);
+    --background-room-code-smooth : transparent;
+    --background-roomBootom       : var(--white);
+    --background-theme-changer    : #efefef;
+
+    --color-function-room : var(--purple-primary);
+    --color-code-params   : var(--dracula-pink);
+    --color-code-destruct : var(--dracula-purple);
+    --color-code-data     : var(--dracula-orange);
+    --color-two-points    : var(--pink);
+    --color-code-block    : var(--dracula-pink);
+    --color-code          : var(--purple-primary);
 }
 [data-theme='dark'] {
     --background-google        : var(--white);
@@ -81,10 +108,10 @@
     --foreground-link            : var(--highlight-secundary);
 
     --details    : #343746;
-    --background : #282a36;
+    --background : var(--dracula-background);
     --gray-line  : #21222c;
 
-    --medium-gray : #6272a4;
+    --medium-gray : var(--dracula-comment);
     --dark-gray   : #9da4bf;
 
     --user-info-text        : #f8f8f8;
@@ -92,12 +119,25 @@
     --placeholder           : var(--medium-gray);
     --placeholder-lowdark   : #2d2f3c;
     --aside-text            : #dfffe3;
+    --created-by            : var(--dracula-yellow);
     --text                  : var(--white);
 
-    --background-input-room    : var(--details);
-    --background-room-code     : var(--details);
-    --background-roomBootom    : var(--details);
-    --background-theme-changer : var(--details);
+    --background-selection-mouse: var(--dracula-cyan);
+    --foreground-selection-mouse: var(--dracula-background);
+
+    --background-input-room       : var(--details);
+    --background-room-code        : var(--details);
+    --background-room-code-smooth : var(--highlight);
+    --background-roomBootom       : var(--details);
+    --background-theme-changer    : #40445a;
+
+    --color-function-room : var(--dracula-green);
+    --color-code-params   : #da70d6;
+    --color-code-destruct : var(--dracula-cyan);
+    --color-code-data     : var(--dracula-orange);
+    --color-two-points    : var(--dracula-pink);
+    --color-code-block    : #da70d6;
+    --color-code          : var(--dracula-green);
 }
 
 
@@ -105,6 +145,10 @@
 body {
     background-color: var(--background);
     color: var(--text);
+
+    text-rendering: optimizelegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+
 }
 
 body,
@@ -142,6 +186,10 @@ ul {
 
     margin-top: 0;
     margin-bottom: 0;
+}
+::selection {
+    background-color: var(--background-selection-mouse);
+    color: var(--foreground-selection-mouse);
 }
 
 

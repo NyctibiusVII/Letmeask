@@ -22,6 +22,7 @@ export default function NewRoom() {
     const { user } = useAuth()
     const { theme } = useTheme()
     const [ newRoom, setNewRoom ] = useState('')
+    const maxCharacters = 15
 
     async function handleCreateRoom(event: FormEvent) {
         event.preventDefault()
@@ -71,6 +72,7 @@ export default function NewRoom() {
                             placeholder="Nome da sala"
                             value={newRoom}
                             onChange={event => setNewRoom(event.target.value)}
+                            maxLength={maxCharacters}
                             required
                         />
                         <RoomButton type="submit">

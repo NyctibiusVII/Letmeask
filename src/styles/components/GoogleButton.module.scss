@@ -1,0 +1,23 @@
+.createRoom {
+    height: 3rem;
+
+    background-color: var(--background-google);
+    color: var(--foreground-google);
+    border: 1px solid var(--border-google);
+    font-weight: 500;
+
+    padding: 0 1rem;
+
+    margin-top: 3rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* - Next/Image */
+    > div {
+        margin-right: 0.5rem !important;
+    }
+
+    &:hover { background-color: var(--shadow-background-google);  }
+}

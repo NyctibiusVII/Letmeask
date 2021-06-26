@@ -1,11 +1,21 @@
 .container {
+    width: 15rem;
     height: 2.5rem;
 
     background-color: var(--background-room-code);
+    box-shadow: inset -1.25rem 0 3.125rem -0.625rem var(--background-room-code-smooth);
     border: 1px solid var(--highlight);
 
+    margin-top: 0;
+
     display: flex;
-    align-items: stretch;
+    align-items: center;
+
+    transition: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
 
     border-radius: 0.5rem;
     -webkit-border-radius: 0.5rem;
@@ -14,35 +24,43 @@
     -o-border-radius: 0.5rem;
 
     overflow: hidden;
+    cursor: copy;
 
     &:hover { border: 1px solid var(--lowdark); }
-    &:hover div { background-color: var(--lowdark); }
+    &:hover > div { background-color: var(--lowdark); }
 
     div {
+        height: 100%;
         background-color: var(--highlight);
 
-        padding: 0 0.75rem;
+        padding: 0 1rem;
 
         display: flex;
-        justify-content: center;
         align-items: center;
 
-        transition: 0.5s;
-        -webkit-transition: 0.5s;
-        -moz-transition: 0.5s;
-        -ms-transition: 0.5s;
-        -o-transition: 0.5s;
+        /* - Next/Image */
+        > div {
+            background-color: transparent;
+
+            transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+        }
     }
-    span {
-        width: 14.5rem;
 
-        font: 500 0.8rem 'Poppins', sans-serif;
+    //.code {
+    //    max-width: 15rem;
 
-        padding: 0 1rem 0 0.75rem;
+        span {
+            font: 500 0.8rem "Poppins", sans-serif;
 
-        display: block;
-        align-self: center;
+            padding: 0 1rem 0 0.75rem;
 
-        flex: 1;
-    }
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    //}
 }

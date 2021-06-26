@@ -3,23 +3,52 @@
     main {
         max-width: 50rem;
 
-        padding: 0 2rem;
+        padding: 7rem 2rem 0;
 
         margin: 0 auto;
 
         .roomTitle {
             margin: 2rem 0 1.5rem;
 
-            display: flex;
-            align-items: center;
-
-            h1 {
+            span#functionRoom {
+                color: var(--color-function-room);
                 font: 700 1.5rem 'Poppins', sans-serif;
-                color: var(--text);
+
+                span#codeParams {
+                    color: var(--color-code-params);
+
+                    span#codeDestruct {
+                        color: var(--color-code-destruct);
+
+                        span#codeData { color: var(--color-code-data); }
+                        span#twoPoints { color: var(--color-two-points); }
+                    }
+                }
+                span#codeBlock {
+                    color: var(--color-code-block);
+
+                    h1 {
+                        color: var(--color-code);
+                        font: 700 1.5rem 'Poppins', sans-serif;
+
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+
+                        span#codeMethodParam  {
+                            color: var(--color-code-params);
+
+                            span#data {
+                                color: var(--color-code-data);
+                            }
+                        }
+                    }
+                }
             }
-            span {
+            .questionCount {
                 background-color: var(--background-count-questions);
                 color: var(--white);
+                box-shadow: 0 0 1.25rem -0.625rem var(--background-count-questions);
                 font: 500 0.8rem 'Poppins', sans-serif;
 
                 padding: 0.5rem 1rem;
@@ -34,72 +63,6 @@
             }
         }
 
-        form {
-            textarea {
-                width: 100%;
-                min-height: 8rem;
-
-                background-color: var(--details);
-                box-shadow: 0 0.2rem 0.75rem rgb(0 0 0 / 4%);
-                border: 0;
-
-                padding: 1rem;
-
-                resize: vertical;
-
-                border-radius: 0.5rem;
-                -webkit-border-radius: 0.5rem;
-                -moz-border-radius: 0.5rem;
-                -ms-border-radius: 0.5rem;
-                -o-border-radius: 0.5rem;
-            }
-
-            .formFooter {
-                margin-top: 1rem;
-
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-
-                .userInfo {
-                    display: flex;
-                    align-items: center;
-
-                    /* - Next/Image */
-                    > div > img {
-                        border-radius: 50%;
-                        -webkit-border-radius: 50%;
-                        -moz-border-radius: 50%;
-                        -ms-border-radius: 50%;
-                        -o-border-radius: 50%;
-                    }
-                    span {
-                        color: var(--text);
-                        font: 500 0.8rem 'Poppins', sans-serif;
-
-                        margin-left: 0.5rem;
-                    }
-                }
-
-                > span {
-                    color: var(--dark-gray);
-                    font: 500 0.8rem 'Poppins', sans-serif;
-
-                    button {
-                        background: transparent;
-                        color: var(--highlight);
-                        border: 0;
-                        font: 500 0.8rem 'Poppins', sans-serif;
-
-                        text-decoration: underline;
-
-                        &:hover { color: var(--lowdark); }
-                    }
-                }
-                button { margin-top: 0; }
-            }
-        }
-
         .questionList {
             margin-top: 2rem;
 
@@ -110,10 +73,46 @@
                 gap: 0.5rem;
 
                 &:hover {
-                    filter: invert(45%) sepia(83%) saturate(5116%) hue-rotate(329deg) brightness(97%) contrast(87%);
-                    //filter: brightness(0.7);
-                 }
+                    svg#check  circle, path { stroke: var(--highlight); }
+                    svg#answer path { stroke: var(--highlight); }
+                    svg#trash  path { stroke: var(--red-primary); }
+                }
+            }
+
+            .emptyQuestions {
+                max-width: 30rem;
+
+                padding: 1.5rem;
+
+                margin: 2.5rem auto;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+
+                gap: 1rem;
+
+                h3 { font: 600 1.5rem 'Poppins', sans-serif; }
+                p  { color: var(--dark-gray); }
             }
         }
+    }
+}
+
+
+
+/* Title
+@media (min-width: 360px) { .container main .roomTitle #functionRoom #codeBlock h1 { max-width: 10rem !important; } }
+@media (min-width: 420px) { .container main .roomTitle #functionRoom #codeBlock h1 { max-width: 15rem !important; } }
+@media (min-width: 520px) { .container main .roomTitle #functionRoom #codeBlock h1 { max-width: 20rem !important; } }
+@media (min-width: 620px) { .container main .roomTitle #functionRoom #codeBlock h1 { max-width:  none !important; } }*/
+
+
+@media (min-width: 630px) {
+    .container main .roomTitle {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
     }
 }

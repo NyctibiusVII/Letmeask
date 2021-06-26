@@ -21,31 +21,6 @@
             /* - Next/Image */
             > div > img { align-self: center; }
 
-            .createRoom {
-                height: 3rem;
-
-                background-color: var(--background-google);
-                color: var(--foreground-google);
-                border: 1px solid var(--border-google);
-                font-weight: 500;
-
-                padding: 0 1rem;
-
-                margin-top: 3rem;
-
-                display: flex;
-                align-items: center;
-
-                height: 3rem;
-
-                /* - Next/Image */
-                > div {
-                    margin-right: 0.5rem !important;
-                }
-
-                &:hover { background-color: var(--shadow-background-google);  }
-            }
-
             .separator {
                 color: var(--medium-gray);
                 font-size: 0.8rem;

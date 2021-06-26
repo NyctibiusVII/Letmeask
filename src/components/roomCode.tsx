@@ -5,8 +5,8 @@ import copy from '../../public/icons/copy.svg'
 import Image  from 'next/image'
 import styles from '../styles/components/RoomCode.module.scss'
 
-export function RoomCode(props: RoomCodeProps) {
-    const roomId = props.code
+export function RoomCode({ code }: RoomCodeProps) {
+    const roomId = code
 
     const copyRoomCodeToClipboard = () => {
         navigator.clipboard.writeText(roomId)
@@ -22,16 +22,21 @@ export function RoomCode(props: RoomCodeProps) {
         imgSizeMini   = 16
 
     return (
-        <button className={styles.container} onClick={copyRoomCodeToClipboard}>
+        <button
+            className={styles.container}
+            onClick={copyRoomCodeToClipboard}
+            title='Copiar codigo da sala'
+        >
             <div>
                 <Image
                     src={copy}
                     alt="Copiar codigo da sala"
                     height={imgSizelittle}
                     width={imgSizelittle}
+                    layout="fixed"
                 />
             </div>
-            <span>Sala #{roomId}</span>
+            <span>{roomId}</span>
         </button>
     )
 }

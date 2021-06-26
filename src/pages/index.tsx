@@ -1,18 +1,16 @@
 import { AsideIllustration } from '../components/asideIllustration'
 import { RoomButton }        from '../components/roomButton'
+import { GoogleButton }      from '../components/googleButton'
 
 import {
     FormEvent,
     useState
 } from 'react'
 import { database } from '../services/firebase'
-import { useAuth }  from '../hooks/useAuth'
 import { useTheme } from 'next-themes'
 
 import logoL    from '../../public/icons/logo/light.svg'
 import logoD    from '../../public/icons/logo/dark.svg'
-import googleL  from '../../public/icons/google/light.svg'
-import googleD  from '../../public/icons/google/dark.svg'
 import loggedIn from '../../public/icons/log-in.svg'
 
 import Head   from 'next/head'
@@ -21,15 +19,9 @@ import Image  from 'next/image'
 import styles from '../styles/pages/Home.module.scss'
 
 export default function Home() {
-    const { user, signInWithGoogle } = useAuth()
     const { theme } = useTheme()
     const [ roomCode, setRoomCode ] = useState('')
 
-    const handleCreateRoom = async() => {
-        if(!user) await signInWithGoogle()
-
-        Router.push('/room/new')
-    }
     const handleJoinRoom = async(event: FormEvent) => {
         event.preventDefault()
 
@@ -75,15 +67,7 @@ export default function Home() {
                         height={imgSizeMedium}
                         width={imgSizeMedium}
                     />
-                    <button className={styles.createRoom} onClick={handleCreateRoom}>
-                        <Image
-                            src={theme === 'light' ? googleL : googleD}
-                            alt="Google icon"
-                            height={imgSizeMini}
-                            width={imgSizeMini}
-                        />
-                        Crie sua sala com o Google
-                    </button>
+                    <GoogleButton context='home' text="Crie sua sala com o Google" icon={true} />
 
                     <small className={styles.separator}>ou entre em uma sala</small>
 

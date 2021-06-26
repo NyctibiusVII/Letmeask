@@ -11,17 +11,22 @@
         -o-border-radius: 0.5rem;
 
     &+.container { margin-top: 0.5rem; }
+    &.container:last-child { margin-bottom: 5rem;}
 
     &.highLighted {
         background: var(--placeholder-highlight);
         border: 1px solid var(--highlight);
 
-        footer .userInfo span { color: var(--user-info-text); }
+        footer {
+            .userInfo span { color: var(--user-info-text); }
+
+            > div button:nth-of-type(2) svg path { stroke: var(--highlight); }
+        }
     }
 
     &.answered { background: var(--placeholder-lowdark); }
 
-    p { color: var(--text); }
+    p { color: var(--text); word-wrap: break-word; }
 
     footer {
         margin-top: 1.5rem;
