@@ -51,7 +51,7 @@ Projeto desenvolvido para gerenciar perguntas, fazer perguntas em real-time com 
 ```
 ✔ - Documentar bem o projeto
 ✔ - Melhorar o estilo: Responsividade e Design
-✖ - Bloquear funcionalidades se não estiver logado
+✔ - Bloquear funcionalidades se não estiver logado
 ✖ - Banco de dados
 ✖ - Next PWA
 
@@ -61,19 +61,19 @@ Funcionalidades:
     - Firebase:
         ✔ - Login com Google
         ✖ - Login com Github
-    ✖ - Toast:
-        ✖ - Sucesso
-        ✖ - Error
-        ✖ - Info
-    ✖ - Modal:
-        ✖ - Close room
-        ✖ - Delete question
+    ✔ - Toast:
+        ✔ - Sucesso
+        ✔ - Error
+        ✔ - Info
+    ✔ - Modal:
+        ✔ - Close room
+        ✔ - Delete question
     - Telas:
         ✔ - Home('/')
         ✔ - createRoom('/room/new')
-        - roomsQA:
-            - user('/rooms/[id]')
-            - admin('/admin/rooms/[id]')
+        ✔ - roomsQA:
+            ✔ - user('/rooms/[id]')
+            ✔ - admin('/admin/rooms/[id]')
         - 404
 ```
 </details>
