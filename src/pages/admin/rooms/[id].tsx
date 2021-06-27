@@ -3,13 +3,17 @@ import { RoomButton } from '../../../components/roomButton'
 import { Question }   from '../../../components/question'
 import { CreatedBy }  from '../../../components/CreatedBy'
 
+import { ModalContext } from '../../../contexts/ModalContext'
+
 import {
+    useContext,
     useEffect,
     useState
 } from 'react'
 import { database }  from '../../../services/firebase'
 import { useRoom }   from '../../../hooks/useRoom'
 import { useAuth }   from '../../../hooks/useAuth'
+import { OpenModalContext } from '../../../interfaces/modalTypes'
 
 import emptyQuestions from '../../../../public/icons/empty-questions.svg'
 
@@ -24,6 +28,8 @@ export default function RoomQAIDAdmin() {
     const { user } = useAuth()
     const { questions, title } = useRoom(roomId)
     const [ isClosed, setIsClosed ] = useState(false)
+
+    const { openModal } = useContext(ModalContext)
 
     useEffect(() => {
         if (roomId === undefined) return // - Prevent undefined in loading
@@ -46,36 +52,42 @@ export default function RoomQAIDAdmin() {
         })
     }, [ roomId, user ])
 
-    async function handleEndRoom() {
-        await database.ref(`rooms/${roomId}`).update({
-            closedAt: new Date()
-        })
-
-        Router.push('/')
-    }
-
-    async function handleDeleteQuestion(questionId: string) {
-        if (window.confirm('Tem certeza que você deseja excluir esta pergunta?')) {
-            await database.ref(`rooms/${roomId}/questions/${questionId}`).remove()
-        }
-    }
-
     async function handleCheckQuestionAsAnswered(questionId: string) {
-        await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
-            isAnswered: true,
-        })
+        await
+            database
+                .ref(`rooms/${roomId}/questions/${questionId}`)
+                .update({
+                    isAnswered: true,
+                })
     }
-
     async function handleHighlightQuestion(questionId: string, highLighted: boolean | undefined) {
         if (highLighted) {
-            await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
-                isHighLighted: false,
-            })
+            await
+                database
+                    .ref(`rooms/${roomId}/questions/${questionId}`)
+                    .update({
+                        isHighLighted: false,
+                    })
         } else {
             await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
                 isHighLighted: true,
             })
         }
+    }
+
+    const closeRoomProps: OpenModalContext = {
+        'icon':  'close',
+        'title': 'Encerrar sala',
+        'txtConcludeBtn': 'Sim, encerrar',
+        'description': 'Tem certeza que você deseja encerrar esta sala?',
+        'whichMethod': 'closeRoom'
+    }
+    const deleteQuestionProps: OpenModalContext = {
+        'icon':  'trash',
+        'title': 'Excluir pergunta',
+        'txtConcludeBtn': 'Sim, excluir',
+        'description': 'Tem certeza que você deseja excluir esta pergunta?',
+        'whichMethod': 'deleteQuestion'
     }
 
     const
@@ -97,7 +109,7 @@ export default function RoomQAIDAdmin() {
                 { isClosed && (
                     <RoomButton
                         title="Encerrar sala"
-                        onClick={handleEndRoom}
+                        onClick={() => openModal(closeRoomProps)}
                         isOutlined
                     >
                         Encerrar sala
@@ -190,7 +202,7 @@ export default function RoomQAIDAdmin() {
                                             type="button"
                                             title="Deletar pergunta"
                                             aria-label="Deletar pergunta"
-                                            onClick={() => handleDeleteQuestion(question.id)}
+                                            onClick={() => { openModal(deleteQuestionProps, question.id) }}
                                         >
                                             <svg id={styles.trash} width={imgSizelittle + 4} height={imgSizelittle + 4} viewBox={`0 0 ${imgSizelittle + 4} ${imgSizelittle + 4}`} fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M3 5.99988H5H21" stroke="var(--dark-gray)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -215,9 +227,7 @@ export default function RoomQAIDAdmin() {
                     ) }
                 </div>
 
-                { user && (
-                    <CreatedBy />
-                ) }
+                { user && <CreatedBy /> }
             </main>
         </div>
     )

@@ -43,6 +43,8 @@
 
     --pink: #ff59f8;
 
+    --overlay: #050206cc;
+
     --gradient-bpp: linear-gradient(139.44deg, var(--blue) 0%, var(--pink) 96.19%);
 }
 [data-theme='light'] {
@@ -70,7 +72,7 @@
     --user-info-text        : var(--text);
     --placeholder-highlight : #f4f0ff;
     --placeholder           : var(--dark-gray);
-    --placeholder-lowdark   : #DBDCDD;
+    --placeholder-lowdark   : #dbdcdd;
     --aside-text            : #dcd1ff;
     --created-by            : var(--dracula-current-line);
     --text                  : #29292e;
@@ -91,6 +93,11 @@
     --color-two-points    : var(--pink);
     --color-code-block    : var(--dracula-pink);
     --color-code          : var(--purple-primary);
+
+    --modal-btn-cancel          : var(--placeholder-lowdark);
+    --modal-btn-cancel-shadow   : #cfd0d1;
+    --modal-btn-conclude        : var(--red-primary);
+    --modal-btn-conclude-shadow : var(--red-secundary);
 }
 [data-theme='dark'] {
     --background-google        : var(--white);
@@ -138,6 +145,11 @@
     --color-two-points    : var(--dracula-pink);
     --color-code-block    : #da70d6;
     --color-code          : var(--dracula-green);
+
+    --modal-btn-cancel          : var(--placeholder-highlight);
+    --modal-btn-cancel-shadow   : var(--details);
+    --modal-btn-conclude        : var(--red-primary);
+    --modal-btn-conclude-shadow : var(--red-secundary);
 }
 
 
