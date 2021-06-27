@@ -6,8 +6,9 @@ import {
     FormEvent,
     useState
 } from 'react'
-import { database } from '../services/firebase'
-import { useTheme } from 'next-themes'
+import { database }  from '../services/firebase'
+import { useTheme }  from 'next-themes'
+import { useToasts } from 'react-toast-notifications'
 
 import logoL    from '../../public/icons/logo/light.svg'
 import logoD    from '../../public/icons/logo/dark.svg'
@@ -20,7 +21,9 @@ import styles from '../styles/pages/Home.module.scss'
 
 export default function Home() {
     const { theme } = useTheme()
+    const { addToast } = useToasts()
     const [ roomCode, setRoomCode ] = useState('')
+
 
     const handleJoinRoom = async(event: FormEvent) => {
         event.preventDefault()
@@ -30,16 +33,29 @@ export default function Home() {
         const roomRef = await database.ref(`rooms/${roomCode}`).get()
 
         if (!roomRef.exists()) {
-            alert('Sala não existe')
+            addToast('Sala não encontrada! Verifique se o código está correto.', {
+                appearance: 'error',
+                autoDismissTimeout: 5000
+            })
             return
         }
 
         if (roomRef.val().closedAt) {
-            alert('Esta sala ja foi encerrada!')
+            addToast('Esta sala ja foi encerrada!', {
+                appearance: 'error',
+                autoDismissTimeout: 5000
+            })
             return
         }
 
-        Router.push(`/rooms/${roomCode}`)
+        const  entering = async() => {
+            addToast(`Entrando na sala: ${roomRef.val().title}`, {
+                appearance: 'info'
+            })
+
+            await Router.push(`/rooms/${roomCode}`)
+        }
+        entering()
     }
 
     const

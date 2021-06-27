@@ -1,5 +1,6 @@
-import { useAuth }  from '../hooks/useAuth'
-import { useTheme } from 'next-themes'
+import { useAuth }   from '../hooks/useAuth'
+import { useTheme }  from 'next-themes'
+import { useToasts } from 'react-toast-notifications'
 
 import { GoogleButtonProps } from '../interfaces/loginButtonType'
 
@@ -13,16 +14,38 @@ import styles from '../styles/components/GoogleButton.module.scss'
 export function GoogleButton({ context, text, icon = false }: GoogleButtonProps) {
     const { user, signInWithGoogle } = useAuth()
     const { theme } = useTheme()
+    const { addToast } = useToasts()
+
+    const successToast = () => {
+        addToast(`Bem-vindo ao Letmeask 🎉`, { // FIX: Bem-vindo ao Letmeask undefined🎉 > `${user?.name}`
+            appearance: 'success',
+            autoDismissTimeout: 4000
+        })
+
+    }
+    const warnToast = () => {
+        addToast('Não logado! 😕', {
+            appearance: 'warning',
+            autoDismissTimeout: 4000
+        })
+    }
 
     const handleCreateRoom = (context: 'home' | 'other') => {
 
         const signInAndRedirect = async () => {
-            if(!user) await signInWithGoogle()
-
-            Router.push('/room/new')
+            if(!user)
+                await signInWithGoogle()
+                    .then(() => {
+                        successToast()
+                        Router.push('/room/new')
+                    })
+                    .catch(() => warnToast())
         }
         const signIn = async () => {
-            if(!user) await signInWithGoogle()
+            if(!user)
+                await signInWithGoogle()
+                    .then(() => successToast())
+                    .catch(() => warnToast())
         }
 
         context === 'home' ? signInAndRedirect() : signIn()

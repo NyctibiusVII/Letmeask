@@ -98,15 +98,16 @@
             }
         }
     }
+
+    .reactLoading {
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
-
-
-/* Title
-@media (min-width: 360px) { .container main .roomTitle #functionRoom #codeBlock h1 { max-width: 10rem !important; } }
-@media (min-width: 420px) { .container main .roomTitle #functionRoom #codeBlock h1 { max-width: 15rem !important; } }
-@media (min-width: 520px) { .container main .roomTitle #functionRoom #codeBlock h1 { max-width: 20rem !important; } }
-@media (min-width: 620px) { .container main .roomTitle #functionRoom #codeBlock h1 { max-width:  none !important; } }*/
 
 
 @media (min-width: 630px) {

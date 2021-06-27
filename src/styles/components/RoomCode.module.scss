@@ -50,17 +50,32 @@
         }
     }
 
-    //.code {
-    //    max-width: 15rem;
+    span {
+        font: 500 0.8rem "Poppins", sans-serif;
 
-        span {
-            font: 500 0.8rem "Poppins", sans-serif;
+        padding: 0 1rem 0 0.75rem;
 
-            padding: 0 1rem 0 0.75rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
 
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+
+@media (max-width: 520px) {
+    .container {
+        width: 13rem;
+    }
+}
+@media (max-width: 400px) {
+    .container {
+        width: 10rem;
+
+        div {
+            padding: 0 0.5rem;
         }
-    //}
+        span {
+            font-size: 0.7rem;
+        }
+    }
 }

@@ -1,3 +1,5 @@
+import { useToasts } from 'react-toast-notifications'
+
 import { RoomCodeProps } from '../interfaces/roomTypes'
 
 import copy from '../../public/icons/copy.svg'
@@ -8,8 +10,15 @@ import styles from '../styles/components/RoomCode.module.scss'
 export function RoomCode({ code }: RoomCodeProps) {
     const roomId = code
 
+    const { addToast } = useToasts()
+
     const copyRoomCodeToClipboard = () => {
-        navigator.clipboard.writeText(roomId)
+        navigator
+            .clipboard
+                .writeText(roomId)
+                .then(() => addToast('Copiado com sucesso 💾', {
+                    appearance: 'success'
+                }))
     }
 
     const

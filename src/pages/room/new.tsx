@@ -5,9 +5,10 @@ import {
     FormEvent,
     useState
 } from 'react'
-import { database } from '../../services/firebase'
-import { useAuth }  from '../../hooks/useAuth'
-import { useTheme } from 'next-themes'
+import { database }  from '../../services/firebase'
+import { useAuth }   from '../../hooks/useAuth'
+import { useTheme }  from 'next-themes'
+import { useToasts } from 'react-toast-notifications'
 
 import logoL from '../../../public/icons/logo/light.svg'
 import logoD from '../../../public/icons/logo/dark.svg'
@@ -21,6 +22,7 @@ import styles from '../../styles/pages/NewRoom.module.scss'
 export default function NewRoom() {
     const { user } = useAuth()
     const { theme } = useTheme()
+    const { addToast } = useToasts()
     const [ newRoom, setNewRoom ] = useState('')
     const maxCharacters = 15
 
@@ -35,7 +37,14 @@ export default function NewRoom() {
             authorId: user?.id
         })
 
-        Router.push(`/admin/rooms/${firebaseRoom.key}`)
+        const  entering = async() => {
+            addToast('Sala criada com sucesso 🎫', {
+                appearance: 'success'
+            })
+
+            await Router.push(`/admin/rooms/${firebaseRoom.key}`)
+        }
+        entering()
     }
 
     const

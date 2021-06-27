@@ -48,3 +48,23 @@
         }
     }
 }
+
+
+
+/* Mobile */
+@media (max-width: 660px) {
+    .container {
+        .content {
+            justify-content: center;
+
+            /* - Next/Image */
+            > div:nth-of-type(1) { display: none !important; }
+
+            > div {
+                button:nth-of-type(2) {
+                    padding: 0 1rem;
+                }
+            }
+        }
+    }
+}
