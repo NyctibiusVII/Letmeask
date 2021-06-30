@@ -4,7 +4,8 @@ Allow: /
 Allow: /room/new
 Allow: /rooms
 Allow: /rooms/[id]
-Allow: admin/rooms/[id]
+Allow: /admin/rooms/[id]
+Disallow: /__tests__
 
 # Host
 Host: https://letmeask-nyctibiusvii.vercel.app

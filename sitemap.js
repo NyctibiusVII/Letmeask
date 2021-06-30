@@ -4,7 +4,7 @@ module.exports = {
     priority: 0.7,
     sitemapSize: 5000,
     generateRobotsTxt: true,
-    exclude: ['/test'],
+    exclude: ['/__tests__'],
     alternateRefs: [],
     // - Default transformation function
     transform: async (config, path) => {
@@ -20,7 +20,8 @@ module.exports = {
         policies: [
             {
                 userAgent: '*',
-                allow: ['/', /*'/room',*/ '/room/new', '/rooms', '/rooms/[id]', /*'/admin',*/ 'admin/rooms/[id]']
+                allow: ['/', /*'/settings', '/room',*/ '/room/new', '/rooms', '/rooms/[id]', /*'/admin',*/ '/admin/rooms/[id]'],
+                disallow: ['/__tests__']
             }
         ]
     }

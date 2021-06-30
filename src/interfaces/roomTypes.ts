@@ -7,3 +7,8 @@ export type RoomButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 export type RoomCodeProps = {
     code: string
 }
+
+export type RoomExistsType = {
+    room: boolean
+    loaded: boolean
+}
