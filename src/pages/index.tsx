@@ -1,14 +1,17 @@
 import { AsideIllustration } from '../components/asideIllustration'
+import { Loading }           from '../components/Loading'
 import { RoomButton }        from '../components/roomButton'
 import { GoogleButton }      from '../components/googleButton'
+import { GithubButton }      from '../components/GithubButton'
 
 import {
     FormEvent,
     useState
 } from 'react'
-import { database }  from '../services/firebase'
-import { useTheme }  from 'next-themes'
 import { useToasts } from 'react-toast-notifications'
+import { useTheme }  from 'next-themes'
+import { database }  from '../services/firebase'
+import { useAuth }   from '../hooks/useAuth'
 
 import logoL    from '../../public/icons/logo/light.svg'
 import logoD    from '../../public/icons/logo/dark.svg'
@@ -20,10 +23,10 @@ import Image  from 'next/image'
 import styles from '../styles/pages/Home.module.scss'
 
 export default function Home() {
+    const { user }  = useAuth()
     const { theme } = useTheme()
     const { addToast } = useToasts()
     const [ roomCode, setRoomCode ] = useState('')
-
 
     const handleJoinRoom = async(event: FormEvent) => {
         event.preventDefault()
@@ -83,7 +86,21 @@ export default function Home() {
                         height={imgSizeMedium}
                         width={imgSizeMedium}
                     />
-                    <GoogleButton context='home' text="Crie sua sala com o Google" icon={true} />
+
+                    { user !== undefined ? (
+                        <>
+                            { user ? (
+                                <RoomButton onClick={() => Router.push('/room/new')} createRoom>
+                                    Criar uma sala
+                                </RoomButton>
+                            ) : (
+                                <>
+                                    <GoogleButton context='home' text="Crie sua sala com o Google" icon={true} />
+                                    <GithubButton context='home' text="Crie sua sala com o Github" icon={true} />
+                                </>
+                            ) }
+                        </>
+                    ) : <Loading width='20%' height='20%' percent /> }
 
                     <small className={styles.separator}>ou entre em uma sala</small>
 

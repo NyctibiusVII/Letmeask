@@ -22,6 +22,14 @@
         color: var(--highlight);
         border: 1px solid var(--highlight);
     }
+    &.createRoom {
+        background: var(--background-roomBootom);
+        box-shadow: var(--box-shadow-button-create-room);
+        color: var(--white);
+        border: 1px solid var(--highlight-tertiary);
+
+        &:hover { background-color: var(--highlight-tertiary) !important; }
+    }
     &:not(:disabled):hover {
         background-color: var(--lowdark);
         color: var(--white);
@@ -29,5 +37,6 @@
     &:disabled {
         opacity: 0.6;
         cursor: not-allowed !important;
+        pointer-events: none;
     }
 }

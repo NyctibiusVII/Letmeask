@@ -37,13 +37,13 @@
 Projeto desenvolvido para gerenciar perguntas, fazer perguntas em real-time com funcionalidade de votação. Projeto realizado na Next Level Week #6 (together) @Rocketseat.
 
 #### Funcionalidades
-* Gerenciar perguntas.
-* Real-time.
-* Login com Google e Github.
-* Modal Cookies consent.
-* Firebase.
+* Gerenciar perguntas
+* Real-time
+* Login com Google e Github
+* Modal Cookies consent
+* Firebase
 * Tema 'Light' e 'Dark'
-* Site responsivo.
+* Site responsivo
 
 <details>
     <summary>Desafios</summary>
@@ -52,15 +52,15 @@ Projeto desenvolvido para gerenciar perguntas, fazer perguntas em real-time com 
 ✔ - Documentar bem o projeto
 ✔ - Melhorar o estilo: Responsividade e Design
 ✔ - Bloquear funcionalidades se não estiver logado
-✖ - Banco de dados
+✔ - Banco de dados
 ✖ - Next PWA
 
 Funcionalidades:
     ✔ - Trocar o tema da aplicação: Light e Dark
     ✔ - Banco de dados externo (Firebase)
-    - Firebase:
+    ✔ - Firebase:
         ✔ - Login com Google
-        ✖ - Login com Github
+        ✔ - Login com Github
     ✔ - Toast:
         ✔ - Sucesso
         ✔ - Error
@@ -70,10 +70,13 @@ Funcionalidades:
         ✔ - Delete question
     - Telas:
         ✔ - Home('/')
-        ✔ - createRoom('/room/new')
-        ✔ - roomsQA:
-            ✔ - user('/rooms/[id]')
-            ✔ - admin('/admin/rooms/[id]')
+        ✖ - Settings('/settings')
+        ✔ - CreateRoom('/room/new')
+        ✔ - RoomsQA:
+            ✖ - PublicRooms('/rooms')
+            ✔ - User('/rooms/[id]')
+            ✖ - AdminConfigs('/admin')
+            ✔ - Admin('/admin/rooms/[id]')
         - 404
 ```
 </details>

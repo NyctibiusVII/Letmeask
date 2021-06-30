@@ -1,18 +1,18 @@
-import { useAuth }   from '../hooks/useAuth'
-import { useTheme }  from 'next-themes'
 import { useToasts } from 'react-toast-notifications'
+import { useTheme }  from 'next-themes'
+import { useAuth }   from '../hooks/useAuth'
 
-import { GoogleButtonProps } from '../interfaces/loginButtonType'
+import { GithubButtonProps } from '../interfaces/loginButtonType'
 
-import googleL  from '../../public/icons/google/light.svg'
-import googleD  from '../../public/icons/google/dark.svg'
+import githubL  from '../../public/icons/github/light.svg'
+import githubD  from '../../public/icons/github/dark.svg'
 
 import Router from 'next/router'
 import Image  from 'next/image'
-import styles from '../styles/components/GoogleButton.module.scss'
+import styles from '../styles/components/GithubButton.module.scss'
 
-export function GoogleButton({ context, text, icon = false }: GoogleButtonProps) {
-    const { user, signInWithGoogle } = useAuth()
+export function GithubButton({ context, text, icon = false }: GithubButtonProps) {
+    const { user, signInWithGithub } = useAuth()
     const { theme } = useTheme()
     const { addToast } = useToasts()
 
@@ -45,7 +45,7 @@ export function GoogleButton({ context, text, icon = false }: GoogleButtonProps)
 
         const signInAndRedirect = async () => {
             if(!user)
-                await signInWithGoogle()
+                await signInWithGithub()
                     .then(() => {
                         successToast()
                         Router.push('/room/new')
@@ -55,9 +55,9 @@ export function GoogleButton({ context, text, icon = false }: GoogleButtonProps)
         }
         const signIn = async () => {
             if(!user)
-                await signInWithGoogle()
+                await signInWithGithub()
                     .then(() => successToast())
-                    .catch(err => warnToast(err.code))
+                    .catch(err => warnToast(err.message))
             else Router.push('/room/new')
         }
 
@@ -77,8 +77,8 @@ export function GoogleButton({ context, text, icon = false }: GoogleButtonProps)
         <button className={styles.container} onClick={() => handleCreateRoom(context)}>
             { icon && (
                 <Image
-                    src={theme === 'light' ? googleL : googleD}
-                    alt="Google icon"
+                    src={theme === 'light' ? githubL : githubD}
+                    alt='Github icon'
                     height={imgSizeMini}
                     width={imgSizeMini}
                 />

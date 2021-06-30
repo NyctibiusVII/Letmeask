@@ -1,14 +1,14 @@
 .container {
     height: 3rem;
 
-    background-color: var(--background-google);
-    color: var(--foreground-google);
-    border: 1px solid var(--border-google);
+    background-color: var(--background-github);
+    color: var(--foreground-github);
+    border: 1px solid var(--border-github);
     font-weight: 500;
 
     padding: 0 1rem;
 
-    margin-top: 3rem;
+    margin-top: 0.5rem;
 
     display: flex;
     justify-content: center;
@@ -19,5 +19,5 @@
         margin-right: 0.5rem !important;
     }
 
-    &:hover { background-color: var(--shadow-background-google);  }
+    &:hover { background-color: var(--shadow-background-github);  }
 }

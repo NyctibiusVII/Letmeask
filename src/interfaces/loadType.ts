@@ -1,7 +1,8 @@
 export type LoadingProps = {
-    color?:  string
-    width?:  string
-    height?: string
+    color?: string
+    width?: string
+    height?:  string
+    percent?: boolean
 }
 
 export type Load = {
