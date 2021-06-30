@@ -43,7 +43,10 @@
 
     --pink: #ff59f8;
 
-    --overlay: #050206cc;
+    --overlay: rgba(#050206, 0.8);
+
+    --gray-github-primary   : #22272e;
+    --gray-github-secundary : #161b22;
 
     --gradient-bpp: linear-gradient(139.44deg, var(--blue) 0%, var(--pink) 96.19%);
 }
@@ -53,11 +56,18 @@
     --border-google            : var(--background-google);
     --shadow-background-google : var(--red-google-secundary);
 
+    --background-github        : var(--gray-github-primary);
+    --foreground-github        : var(--white);
+    --border-github            : var(--background-github);
+    --shadow-background-github : var(--gray-github-secundary);
+
     --highlight : var(--purple-primary);
     --lowdark   : var(--purple-secundary);
 
     --highlight-secundary : var(--green-primary);
     --lowdark-secundary   : var(--green-secundary);
+
+    --highlight-tertiary : var(--pink);
 
     --background-count-questions : var(--pink);
     --foreground-link            : var(--pink);
@@ -98,6 +108,8 @@
     --modal-btn-cancel-shadow   : #cfd0d1;
     --modal-btn-conclude        : var(--red-primary);
     --modal-btn-conclude-shadow : var(--red-secundary);
+
+    --box-shadow-button-create-room: 0 0 1rem -0.625rem var(--highlight-tertiary), inset 0rem 0 6rem 0.5rem var(--highlight-tertiary);
 }
 [data-theme='dark'] {
     --background-google        : var(--white);
@@ -105,11 +117,18 @@
     --border-google            : var(--black);
     --shadow-background-google : #ededed;
 
+    --background-github        : var(--white);
+    --foreground-github        : var(--black);
+    --border-github            : var(--black);
+    --shadow-background-github : #ededed;
+
     --highlight : var(--green-primary);
     --lowdark   : var(--green-secundary);
 
     --highlight-secundary : var(--purple-primary);
     --lowdark-secundary   : var(--purple-secundary);
+
+    --highlight-tertiary : var(--highlight-secundary);
 
     --background-count-questions : var(--highlight-secundary);
     --foreground-link            : var(--highlight-secundary);
@@ -150,6 +169,9 @@
     --modal-btn-cancel-shadow   : var(--details);
     --modal-btn-conclude        : var(--red-primary);
     --modal-btn-conclude-shadow : var(--red-secundary);
+
+
+    --box-shadow-button-create-room: 0 0 1rem -0.625rem var(--highlight-tertiary), inset 0rem 0 6rem -0.625rem var(--highlight-tertiary);
 }
 
 

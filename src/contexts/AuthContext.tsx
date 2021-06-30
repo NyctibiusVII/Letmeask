@@ -13,7 +13,7 @@ type User = {
     avatar: string
 }
 type AuthContextType = {
-    user: User | undefined
+    user: User | undefined | null
     signInWithGoogle: () => Promise<void>
     signInWithGithub: () => Promise<void>
     signOut: () => Promise<void>
@@ -25,7 +25,7 @@ type AuthContextProviderProps = {
 export const AuthContext = createContext({} as AuthContextType)
 
 export function AuthContextProvider(props: AuthContextProviderProps) {
-    const [user, setUser] = useState<User>()
+    const [user, setUser] = useState<User | null>()
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
@@ -39,7 +39,7 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
                     name: displayName,
                     avatar: photoURL
                 })
-            }
+            } else setUser(null)
         })
 
         return () => unsubscribe()

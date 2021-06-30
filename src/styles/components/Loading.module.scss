@@ -4,4 +4,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &.percent {
+        height: 100% !important;
+    }
 }
