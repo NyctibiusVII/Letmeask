@@ -4,13 +4,8 @@ import { useAuth }   from '../hooks/useAuth'
 
 import { GithubButtonProps } from '../interfaces/loginButtonType'
 
-<<<<<<< HEAD
 import githubL  from '../../public/icons/github/light.svg'
 import githubD  from '../../public/icons/github/dark.svg'
-=======
-import googleL  from '../../public/icons/google/light.svg'
-import googleD  from '../../public/icons/google/dark.svg'
->>>>>>> 4aa0a1d89a0800dfa03625ddd68ee27ae02f5851
 
 import Router from 'next/router'
 import Image  from 'next/image'
@@ -82,11 +77,7 @@ export function GithubButton({ context, text, icon = false }: GithubButtonProps)
         <button className={styles.container} onClick={() => handleCreateRoom(context)}>
             { icon && (
                 <Image
-<<<<<<< HEAD
                     src={theme === 'light' ? githubL : githubD}
-=======
-                    src={theme === 'light' ? googleL : googleD}
->>>>>>> 4aa0a1d89a0800dfa03625ddd68ee27ae02f5851
                     alt='Github icon'
                     height={imgSizeMini}
                     width={imgSizeMini}
