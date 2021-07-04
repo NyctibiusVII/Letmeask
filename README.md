@@ -16,7 +16,7 @@
         <img alt="Licença" src="https://img.shields.io/static/v1?label=License&message=MIT&color=ff59f8&labelColor=835afd">
     </a>
     <a href="https://picpay.me/Matheus_nyctibius_vii">
-        <img alt="Donate" src="https://img.shields.io/static/v1?label=$&message=Donate&color=ff59f8&labelColor=835afd">
+        <img alt="Donate" src="https://img.shields.io/static/v1?label=$&message=Donate&color=05eb6c&labelColor=282a36">
     </a>
 </p>
 <p align="center">
