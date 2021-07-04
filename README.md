@@ -93,16 +93,15 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ## Layout 🚧
 ### Desktop Screenshot
 <div style="display: flex; flex-direction: 'column'; align-items: 'center';">
-<!-- Responsive, 1366 x 768, 50% (Laptop L - 1366px)-->
+<!-- Responsive, 1366 x 768, 50% (Laptop L - 1366px) Dark -->
     <!--<img width="400px" src="./.github/desktop/home.png">-->
-    <img width="400px" src="./.github/desktop/home-login.png">
     <img width="400px" src="./.github/desktop/home-enter-this-room.png">
-    <img width="400px" src="./.github/desktop/createRoom.png">
-    <!--<img width="400px" src="./.github/desktop/admin-roomQA-with-questions.png">-->
-    <!--<img width="400px" src="./.github/desktop/admin-roomQA-with-questions-being-answered.png">-->
-    <!--<img width="400px" src="./.github/desktop/admin-roomQA-with-questions-answered.png">-->
-    <!--<img width="400px" src="./.github/desktop/admin-roomQA-without-questions.png">-->
-    <!--<img width="400px" src="./.github/desktop/modal-close-room.png">-->
+    <!--<img width="400px" src="./.github/desktop/createRoom.png">-->
+    <img width="400px" src="./.github/desktop/admin-roomQA-with-questions.png">
+    <img width="400px" src="./.github/desktop/admin-roomQA-without-questions.png">
+    <!--<img width="400px" src="./.github/desktop/user-roomQA-with-questions.png">-->
+    <!--<img width="400px" src="./.github/desktop/user-roomQA-without-questions.png">-->
+    <img width="400px" src="./.github/desktop/modal-close-room.png">
     <!--<img width="400px" src="./.github/desktop/modal-delete-question.png">-->
     <!--<img width="400px" src="./.github/desktop/settings.png">-->
 </div>
@@ -110,31 +109,27 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ### Mobile Screenshot
 <div style="display: flex; flex-direction: 'row';">
-<!-- Responsive, 320 x 720, 75% (Mobile L - 320px)-->
+<!-- Responsive, 320 x 720, 75% (Mobile L - 320px) Light -->
     <img width="180px" src="./.github/mobile/home.png">
-    <!--<img width="180px" src="./.github/mobile/home-login.png">-->
-    <img width="180px" src="./.github/mobile/home-enter-this-room.png">
+    <!--<img width="180px" src="./.github/mobile/home-enter-this-room.png">-->
     <img width="180px" src="./.github/mobile/createRoom.png">
     <!--<img width="180px" src="./.github/mobile/admin-roomQA-with-questions.png">-->
-    <!--<img width="180px" src="./.github/mobile/admin-roomQA-with-questions-being-answered.png">-->
-    <!--<img width="180px" src="./.github/mobile/admin-roomQA-with-questions-answered.png">-->
-    <!--<img width="180px" src="./.github/mobile/admin-roomQA-without-questions.png">-->
+    <img width="180px" src="./.github/mobile/admin-roomQA-without-questions.png">
+    <img width="180px" src="./.github/mobile/user-roomQA-with-questions.png">
+    <!--<img width="180px" src="./.github/mobile/user-roomQA-without-questions.png">-->
     <!--<img width="180px" src="./.github/mobile/modal-close-room.png">-->
-    <!--<img width="180px" src="./.github/mobile/modal-delete-question.png">-->
+    <img width="180px" src="./.github/mobile/modal-delete-question.png">
     <!--<img width="180px" src="./.github/mobile/settings.png">-->
 </div>
 <a href="./.github/README-IMGS.md">Ver mais</a>
 <!-- IMGS
     ------------------------------------------
     home
-    home-login
     home-enter-this-room
     ------------------------------------------
     createRoom
     ------------------------------------------
     admin-roomQA-with-questions
-    admin-roomQA-with-questions-being-answered
-    admin-roomQA-with-questions-answered
     admin-roomQA-without-questions
     user-roomQA-with-questions
     user-roomQA-without-questions
