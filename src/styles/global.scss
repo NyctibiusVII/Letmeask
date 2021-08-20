@@ -76,6 +76,12 @@
     --background : var(--dracula-foreground);
     --gray-line  : #e2e2e2;
 
+    --errText404 : var(--pink);
+    --glitchErrorName-background :springgreen;
+    --glitchErrorName-foreground :cornflowerblue;
+    --glitchErrorNameMainText-background :cornflowerblue;
+    --glitchErrorNameMainText-foreground :springgreen;
+
     --medium-gray : #a8a8b3;
     --dark-gray   : #737380;
 
@@ -137,6 +143,12 @@
     --background : var(--dracula-background);
     --gray-line  : #21222c;
 
+    --errText404 : var(--highlight);
+    --glitchErrorName-background :blueviolet;
+    --glitchErrorName-foreground : var(--white);
+    --glitchErrorNameMainText-background :var(--highlight);
+    --glitchErrorNameMainText-foreground :blueviolet;
+
     --medium-gray : var(--dracula-comment);
     --dark-gray   : #9da4bf;
 
@@ -169,7 +181,6 @@
     --modal-btn-cancel-shadow   : var(--details);
     --modal-btn-conclude        : var(--red-primary);
     --modal-btn-conclude-shadow : var(--red-secundary);
-
 
     --box-shadow-button-create-room: 0 0 1rem -0.625rem var(--highlight-tertiary), inset 0rem 0 6rem -0.625rem var(--highlight-tertiary);
 }

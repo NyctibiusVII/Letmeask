@@ -77,7 +77,7 @@ Funcionalidades:
             ✔ - User('/rooms/[id]')
             ✖ - AdminConfigs('/admin')
             ✔ - Admin('/admin/rooms/[id]')
-        - 404
+        ✔ - 404
 ```
 </details>
 
@@ -104,6 +104,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
     <img width="400px" src="./.github/desktop/modal-close-room.png">
     <!--<img width="400px" src="./.github/desktop/modal-delete-question.png">-->
     <!--<img width="400px" src="./.github/desktop/settings.png">-->
+    <!--<img width="400px" src="./not-found-404.png">-->
 </div>
 <a href="./.github/README-IMGS.md">Ver mais</a>
 
@@ -120,6 +121,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
     <!--<img width="180px" src="./.github/mobile/modal-close-room.png">-->
     <img width="180px" src="./.github/mobile/modal-delete-question.png">
     <!--<img width="180px" src="./.github/mobile/settings.png">-->
+    <img width="180px" src="./.github/mobile/not-found-404.png">
 </div>
 <a href="./.github/README-IMGS.md">Ver mais</a>
 <!-- IMGS
@@ -138,6 +140,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
     modal-delete-question
     ------------------------------------------
     settings
+    not-found-404
     ------------------------------------------
 -->
 

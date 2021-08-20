@@ -1,0 +1,222 @@
+.container {
+    height: 100vh;
+
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+aside.backHome {
+    display: flex;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 200;
+
+    a:before {
+        content: '◂';/* ◂ ↩ ◁ */
+    }
+    a {
+        color: var(--white);
+
+        padding: 0 1rem;
+        margin-top: -1rem;
+
+        position: absolute;
+
+        z-index: 400;
+    }
+    .triangle {
+        width: 0;
+        height: 0;
+
+        border-bottom: 5rem solid transparent;
+        border-left: 150vw solid var(--highlight);
+
+        z-index: 300;
+    }
+}
+main.contentError404 {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .navMacOS { display: none; }
+    h1 {
+        color: var(--highlight);
+        font-size: 0.8rem;
+        text-align: end;
+
+        margin-top: 0.5rem;
+    }
+    .commentIn { display: none; }
+}
+.comment {
+    h2 {
+        color: #3f3d56;
+        font-size: 0.9rem;
+    }
+}
+.commentEx { width: 100%; }
+
+.contentBlock { display: none;}
+.contentGlitchErrorName { display: none;}
+
+
+
+/* Desktop*/
+@media (min-width: 1080px) {
+    .container {
+        flex-direction: row;
+        justify-content: initial;
+    }
+
+
+
+    aside.backHome {
+        top: initial;
+        bottom: 0;
+
+        a:before {
+            content: '';
+        }
+        a {
+            font-size: 1.2rem;
+
+            margin-top: 0.5rem;
+        }
+        .triangle {
+            border-top: 5rem solid transparent;
+            border-bottom: initial;
+            border-left: 50vw solid var(--highlight);
+
+            z-index: 100;
+        }
+    }
+    main.contentError404 {
+        height: initial;
+
+        box-shadow: 20px -10px 0px 0px var(--highlight), -20px 20px 20px 0px rgb(0 0 0 / 5%);
+
+        padding: 3rem 7rem;
+
+        margin: 0 auto;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+
+        border-radius: 0.5rem;
+        -webkit-border-radius: 0.5rem;
+        -moz-border-radius: 0.5rem;
+        -ms-border-radius: 0.5rem;
+        -o-border-radius: 0.5rem;
+
+        .navMacOS {
+            margin: -2rem 0 0 -5rem;
+
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            div {
+                width: 1rem;
+                height: 1rem;
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+            }
+            div:nth-child(1) { background-color: var(--red-primary); }
+            div:nth-child(2) { background-color: var(--dracula-yellow); }
+            div:nth-child(3) { background-color: var(--dracula-green); }
+        }
+        h1 { display: none; }
+        .commentIn { display: block; }
+    }
+    .commentEx { display: none; }
+
+
+
+    .contentBlock {
+        width: 11rem;
+        height: 70%;
+
+        background-color: rgb(255 255 255 / 5%);
+        box-shadow:
+            inset 0px 0px 20px 0px rgb(255 255 255 / 5%),
+            -20px 20px 20px 0px rgb(255 255 255 / 5%),
+            20px 20px 20px 0px rgb(0 0 0 / 5%);
+
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        display: block;
+
+        border-radius: 0.5rem;
+        -webkit-border-radius: 0.5rem;
+        -moz-border-radius: 0.5rem;
+        -ms-border-radius: 0.5rem;
+        -o-border-radius: 0.5rem;
+
+        backdrop-filter: blur(50px);
+        -webkit-backdrop-filter: blur(50px);
+
+        z-index: 10;
+    }
+    .contentBlock:nth-child(2) {
+        height: 30%;
+
+        margin-left: 7.5rem;
+
+        z-index: 20;
+    }
+    .contentBlock:nth-child(3) {
+        height: 20%;
+
+        margin-left: 2.5rem;
+
+        z-index: 30;
+    }
+
+    .contentGlitchErrorName {
+        height: 100vh;
+
+        background-color: var(--glitchErrorName-background);
+        color: var(--glitchErrorName-foreground);
+        line-height: 1.7rem;
+
+        padding: 3rem;
+
+        display: block;
+
+        border-radius: 0.5rem;
+        -webkit-border-radius: 0.5rem;
+        -moz-border-radius: 0.5rem;
+        -ms-border-radius: 0.5rem;
+        -o-border-radius: 0.5rem;
+
+        white-space: nowrap;
+        overflow: hidden;
+
+        p {
+            background-color: var(--glitchErrorNameMainText-background);
+            color: var(--glitchErrorNameMainText-foreground);
+        }
+    }
+}

@@ -16,6 +16,7 @@
     <img width="400px" src="desktop/modal-close-room.png">
     <img width="400px" src="desktop/modal-delete-question.png">
     <img width="400px" src="desktop/settings.png">
+    <img width="400px" src="desktop/not-found-404.png">
 </div>
 
 ## Mobile Screenshot
@@ -31,6 +32,7 @@
     <img width="180px" src="mobile/modal-close-room.png">
     <img width="180px" src="mobile/modal-delete-question.png">
     <img width="180px" src="mobile/settings.png">
+    <img width="180px" src="mobile/not-found-404.png">
 </div>
 <!-- IMGS
     ------------------------------------------
@@ -48,5 +50,6 @@
     modal-delete-question
     ------------------------------------------
     settings
+    not-found-404
     ------------------------------------------
 -->

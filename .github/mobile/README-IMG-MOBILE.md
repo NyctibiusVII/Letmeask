@@ -16,6 +16,7 @@
     <img width="180px" src="./modal-close-room.png">
     <img width="180px" src="./modal-delete-question.png">
     <img width="180px" src="./settings.png">
+    <img width="180px" src="./not-found-404.png">
 </div>
 <!-- IMGS
     ------------------------------------------
@@ -33,5 +34,6 @@
     modal-delete-question
     ------------------------------------------
     settings
+    not-found-404
     ------------------------------------------
 -->
